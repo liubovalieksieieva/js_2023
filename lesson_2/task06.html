@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:regular,500,700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="css/_style.css">
+	<title>Task 6</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header"><div class="header__container"><h1 class="header__title title">task 6</h1></div></header>
+		<main class="main__task">
+
+<!-- Задача 6. З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість 
+	кожного товару окремо та загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи 
+	розмітки.
+-->
+
+
+<script>
+
+
+// 1. Введення даних
+	let pizzaPricePerUnit = parseFloat(prompt('Введіть ціну піцци за одну одиницю', 0.0));
+	let pizzaQuantity = parseInt(prompt('Ведіть кількість одиниць піцци', 0));
+	let colaPricePerUnit = parseFloat(prompt('Введіть ціну за одну пляшку Коли', 0.0));
+	let colaQuantity = parseInt(prompt('Введіть кількість пляшок Коли', 0));
+	let juicePricePerUnit = parseFloat(prompt('Введіть ціну за один пакет соку', 0.0));
+	let juiceQuantity = parseInt(prompt('Введіть кількість пакетів соку', 0));
+
+// 2. Обчислення
+
+	let pizzaTotalPrice = pizzaPricePerUnit * pizzaQuantity;
+	let colaTotalPrice = colaPricePerUnit * colaQuantity;
+	let juiceTotalPrice = juicePricePerUnit * juiceQuantity;
+	let totalPrice = pizzaTotalPrice + colaTotalPrice + juiceTotalPrice;
+
+// 3. Виведення
+
+document.write(`
+<h4>ТОВ Сільпо Фуд</h4>
+<h4>м.Київ, проспект Перемоги</h4>
+<h5>Фіскальний чек №1234567</h5>
+<table>
+	<tr>
+		<th>назва товару</th>
+		<th>к-сть од.</th>
+		<th>вартість</th>
+	</tr>
+	<tr>
+		<th>Піцца</th>
+		<th>${pizzaQuantity} од.</th>
+		<th>${pizzaTotalPrice.toFixed(2)} грн</th>
+	<tr>
+		<th>Кола</th>
+		<th>${ colaQuantity} од.</th>
+		<th>${colaTotalPrice.toFixed(2)} грн</th>
+	</tr>
+		<tr>
+			<th>Сік</th>
+			<th>${juiceQuantity} од.</th>
+			<th> ${juiceTotalPrice.toFixed(2)} грн</th>
+		</tr>
+		<th>Загальна сума ${totalPrice.toFixed(2)} грн</th>
+</table>
+<div>***Дякуємо!***</div>
+`)
+
+
+
+</script>
+
+
+<div class="some-button">
+	<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+	
+</div>		</main>
+		<footer>
+		</footer>
+	</div>
+	
+</body>
+</html>

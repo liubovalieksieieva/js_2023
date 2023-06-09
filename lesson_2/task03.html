@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:regular,500,700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="css/_style.css">
+	<title>Task 3</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header"><div class="header__container"><h1 class="header__title title">task 3</h1></div></header>
+		<main class="main__task">
+
+<!-- Задача 3. Дано вартість одиниці товару і кількість. Знайти загальну вартість та ПДВ (5% від загальної вартості).
+-->
+
+
+<script>
+
+
+// 1. Введення даних
+	const VAT_PERCENTAGE = 5;
+	let productPrice = parseFloat(prompt('Введіть вартість товару за одиницю', 0.00));
+	let quantityOfProducts = parseInt(prompt('Введіть кількість обраного товару', 0));
+
+// 2. Обчислення
+
+	let totalPrice = productPrice * quantityOfProducts;
+	let totalPriceVat = totalPrice + (totalPrice * VAT_PERCENTAGE / 100);
+
+
+// 3. Виведення
+
+document.write(`Ціна обраного товару за одиницю ${productPrice.toFixed(2)} грн <br>`);
+document.write(`Кількість обраного товару ${quantityOfProducts} <br>`);
+document.write(`Загальна вартість товару без ПДВ ${totalPrice.toFixed(2)} грн <br>`);
+document.write(`Загальна вартість товару з ПДВ ${totalPriceVat.toFixed(2)} грн <br>`);
+
+
+</script>
+
+<div class="some-button">
+	<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+	
+</div>		</main>
+		<footer></footer>
+	</div>
+	
+</body>
+</html>

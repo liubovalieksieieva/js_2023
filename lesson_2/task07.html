@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:regular,500,700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="css/_style.css">
+	<title>Task 7</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header"><div class="header__container"><h1 class="header__title title">task 7</h1></div></header>
+		<main class="main__task">
+
+<!--Задача 7.Знайти суму випадкового номера місяця (від 1 до 12) та випадкового номера дня (від 0 до 6).
+-->
+
+
+<script>
+
+
+// 1. Введення даних
+	let min = 1,max = 12;
+	let minDay = 0, maxDay = 6;
+	// let result = alert(`Натисніть "ОК" щоб отримати рандомний номер місяця`);
+	// let monthRandom
+
+// 2. Обчислення
+   let monthRandom = min + Math.floor(Math.random()*(max-min+1));
+	let dayRandom = minDay + Math.floor(Math.random()*(maxDay-minDay+1));
+	let sumRandom = monthRandom + dayRandom;
+
+
+// 3. Виведення
+alert(`Натисніть "ОК" щоб отримати рандомний номер місяця`);
+document.write(`Випадковий номер місяця ${monthRandom} <br>`);
+alert('Натисніть "ОК" щоб отримати випадковий номер дня');
+document.write(`Випадковий номер дня ${dayRandom}, <br> їх сума = ${sumRandom}`);
+
+
+
+
+</script>
+
+
+<div class="some-button"><a target="_blank" href="index.html" class="articles__button button">На головну</a></div>
+		</main>
+		<footer>
+		</footer>
+	</div>
+	
+</body>
+</html>

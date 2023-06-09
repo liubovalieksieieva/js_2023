@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:regular,500,700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="css/_style.css">
+	<title>Task 1</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header"><div class="header__container"><h1 class="header__title title">task 1</h1></div></header>
+		<main class="main__task">
+
+<!-- Задача 1. Знайти суму, добуток та частку двох дійсних чисел. Результат вивести у формі таблиці -->
+
+
+<script>
+
+
+// 1. Введення даних
+	let firstNum = parseFloat(prompt('Введіть перше дійсне число', 0.0));
+	let secondNum = parseFloat(prompt('Введіть друге дійсне число', 0.0));
+	
+
+
+// 2. Обчислення
+
+	let sumOfNum = firstNum + secondNum;
+	let productOfNum = firstNum * secondNum;
+	let fractionOfNum = firstNum / secondNum;
+	
+
+
+// Виведення
+
+
+console.table(`Сума двох дійсних чисел = ${sumOfNum.toFixed(2)} `);
+
+console.table(`Добуток двох дійсних чисел = ${productOfNum.toFixed(2)} `);
+
+console.table(`Частка двох дійсних чисел  = ${fractionOfNum.toFixed(2)} `);
+
+document.write(`
+	<table>
+		<tr>
+			<th>Сума</th>
+			<th>Добуток</th>
+			<th>Частка</th>
+		</tr>
+		<tr>
+			<td>${sumOfNum.toFixed(2)}</td>
+			<td>${productOfNum.toFixed(2)}</td>
+			<td>${fractionOfNum.toFixed(2)}</td>
+		</tr>
+	</table>
+`);
+
+
+</script>
+
+<div class="some-button"><a target="_blank" href="index.html" class="articles__button button">На головну</a></div>
+		</main>
+		<footer></footer>
+	</div>
+	
+</body>
+</html>

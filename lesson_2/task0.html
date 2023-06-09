@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:regular,500,700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="css/_style.css">
+	<title>Task 0</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header"><div class="header__container"><h1 class="header__title title">task 0</h1></div></header>
+		<main class="main__task">
+<!-- Задача 0. Обчислити значення виразів 
+S1=a+12+b
+S2=корінь квадратнийa+b/2a 
+S3=корінь кубічний(a+b)c 
+S4=sin⁡(a/-b) -->
+
+<script>
+
+// 1. Введення даних
+	let a = parseFloat(prompt('First number', '0'));
+	let b = parseFloat(prompt('Second number', '0'));
+	let c = parseFloat(prompt('Third number','0'));
+
+
+// 2. Обчислення
+
+	let sumS1 = a+12+b;
+	let resultS2 = Math.sqrt((a+b)/(2*a));
+	let resultS3 = Math.cbrt((a+b)*c);
+	let resultS4 = Math.sin(a/-b);
+
+
+// Виведення
+
+
+document.write(`Result S1 = ${sumS1.toFixed(2)} <br>`)
+
+document.write(`Result S2 = ${resultS2.toFixed(2)} <br>`)
+
+document.write(`Result S3 = ${resultS3.toFixed(2)} <br>`)
+
+document.write(`Result S4 = ${resultS4.toFixed(2)} <br>`)
+
+
+</script>
+
+<div class="some-button"><a target="_blank" href="index.html" class="articles__button button">На головну</a></div>
+
+		</main>
+		<footer></footer>
+	</div>
+	
+</body>
+</html>
