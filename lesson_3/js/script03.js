@@ -13,14 +13,14 @@ someRandomNum = min + Math.floor(Math.random() * (max - min + 1));
 
 if (someRandomNum === result)
 	alert('Вірно!')
-else
+else {
 	alert('Невірно, спробуйте ще!')
-result = parseInt(prompt('Спроба 2', '0'))
-if (result === someRandomNum)
-	alert('Супер! Ви вгадали!')
-else
-	alert(`Нажаль, випадкове число було ${someRandomNum}`)
-
+	result = parseInt(prompt('Спроба 2', '0'))
+	if (result === someRandomNum)
+		alert('Супер! Ви вгадали!')
+	else
+		alert(`Нажаль, випадкове число було ${someRandomNum}`)
+}
 
 
 
