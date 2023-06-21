@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+
+// =============================================================
+//  Задача 7. Вивести на екран N абзаців (N вводиться користувачем) за зразком:
+// let userAnswer = parseInt(prompt('Введіть кількість абзаців, які ви бажаєте переглянути'))
+
+// for ( let i = 1; i <= userAnswer; i++) {
+// 	let paragraph = 1
+// 	document.write(`<h1>Title ${i}</h1>`)
+// 	for (let j= 1;j <= i;j++) {
+// 		document.write(`<p>Subtitle ${i}, article ${paragraph++}</p>`)
+// 	}
+// }
+// ========================================================================
+// Задача 8. Користувач загадує число. За 3 спроби комп’ютер намагається вгадати число 
+// користувача (використати confirm).
+// confirm('Задумайте випадкове число від 1 до 10, комп\'ютер спробує відгадати Ваше число за 3 рази')
+// let min=1,max=10;
+// for (let i = 0; i < 3; i++) {
+// 	let randomNum = min + Math.floor(Math.random()*(max-min+1))
+// 	let userAnswer = confirm(`Задумане число = ${randomNum} ?`)
+// 	if (userAnswer===true){
+// 		alert ('Ура, мені вдалося відгадати Ваше число')
+// 	break
+//    }
+// 	else
+// 	alert('Нажаль, це виявилось складно!')
+// }
+// ==========================================================================
+// Задача 9. Користувач загадує число. Комп’ютер задає питання поки не вгадає число
+//  користувача (використати confirm).
+
+// let userNum = parseInt(prompt('Задумайте випадкове число від 1 до 10, комп\'ютер спробує відгадати Ваше число за 3 рази'))
+// let min=1,max=10;
+// let randomNum
+// while(randomNum!==userNum) {
+// 	randomNum = min + Math.floor(Math.random()*(max-min+1))
+// 	userNum = confirm(`Задумане число = ${randomNum} ?`)
+// 	if (userNum===true){
+// 		alert ('Ура, мені вдалося відгадати Ваше число')
+// 	break
+//    }
+// }
+// ===========================================================================
+// Задача 10. Знайти суму всіх непарних чисел, що знаходяться між заданими користувачем числами. 
+
+// let minRangeNum = parseInt(prompt('Введіть мінімальне число'))
+// let maxRangeNum =  parseInt(prompt('Введіть максимальне число'))
+// let sumOfOdd = 0
+// let num
+// for ( num = minRangeNum; num <  maxRangeNum;num++) {
+// 	if (num%2 !==0){
+// 	sumOfOdd+=num
+//    }
+// }
+// alert (`Сума всіх непарних чисел які знаходяться в діапазоні від ${minRangeNum} i ${maxRangeNum} = ${sumOfOdd}`)
+// ============================================================================
+// Задача 11. Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем числами.
+
+// let minRangeNum = parseInt(prompt('Введіть мінімальне число'))
+// let maxRangeNum =  parseInt(prompt('Введіть максимальне число'))
+// let sumOfOdd = 0
+// let countOddNumbers = 0
+// let num
+// 	for (let i =minRangeNum; i <= maxRangeNum; i=i+2) {
+// 		if (i%2!==0) {
+// 			sumOfOdd+=i
+// 			countOddNumbers+=1
+// 			if(countOddNumbers === 5) break
+// 		}	
+// 	}
+// alert(`Сума перших 5 непарних чисел між заданими ${minRangeNum} i ${maxRangeNum} = ${sumOfOdd}`)
+// ====================================================================================================
+
+
+</script>
+
+</body>
+</html>

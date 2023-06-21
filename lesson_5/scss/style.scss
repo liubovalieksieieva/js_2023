@@ -1,0 +1,26 @@
+@use "sass:math";
+
+@import "_reset";
+table {
+  //   border-collapse: collapse;
+  border: 2px solid #9a9797;
+
+  th {
+    padding: 10px;
+    min-width: 115px;
+    border: 2px solid #000;
+  }
+}
+.table {
+  border: 1px solid #9a9797;
+  min-width: 200px;
+}
+h1 {
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+}
+p {
+  margin-bottom: 10px;
+}
