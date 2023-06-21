@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:regular,500,700&display=swap" rel="stylesheet" />
+	<title>Task 1</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header"><div class="header__container"><h1 class="header__title title">task 1</h1></div></header>
+		<main class="main__task">
+         <div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+		</main>
+		<footer></footer>
+	</div>
+	<script>
+		// =============================================================
+//  Задача 8. Користувач загадує число. За 3 спроби комп’ютер намагається вгадати число 
+// користувача (використати confirm).
+confirm('Задумайте випадкове число від 1 до 10, комп\'ютер спробує відгадати Ваше число за 3 рази')
+let min=1,max=10;
+for (let i = 0; i < 3; i++) {
+	let randomNum = min + Math.floor(Math.random()*(max-min+1))
+	let userAnswer = confirm(`Задумане число = ${randomNum} ?`)
+	if (userAnswer===true){
+		alert ('Ура, мені вдалося відгадати Ваше число')
+	break
+   }
+	else
+	alert('Нажаль, це виявилось складно!')
+}
+
+	</script>
+</body>
+</html>
