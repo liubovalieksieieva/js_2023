@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 4</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				// Задача 3. Створити окремі функції, які для 4 чисел знаходять:
+				// 1) суму;
+				// 2) добуток;
+				// 3)середнє арифметичне;
+				// 4)мінімальне значення. 
+				// =======1 version===================================================
+				// function getProductNum(num1, num2, num3, num4) {
+				// 	return num1 * num2 * num3 * num4
+				// }
+				// // --------------------------------------------------------
+				// function getSumNum(num1, num2, num3, num4) {
+				// 	return num1 + num2 + num3 + num4
+				// }
+				// // -------------------------------------------------------
+				// function getAverageNum(num1, num2, num3, num4) {
+				// 	return (num1 + num2 + num3 + num4) / 4
+				// }
+				// // -------------------------------------------------------
+				// function getMinNum(num1, num2, num3, num4) {
+				// 	let m1
+				// 	m1 = num1 < num2 ? num1 : num2
+				// 	let m2
+				// 	m2 = num3 < num4 ? num3 : num4
+				// 	let result
+				// 	result = m1 < m2 ? m1 : m2
+				// 	return result
+				// }
+				// // -------------------------------------------------------
+				// let firstNum = parseFloat(prompt('Введіть перше число'))
+				// let secondNum = parseFloat(prompt('Введіть друге число'))
+				// let thirdNum = parseFloat(prompt('Введіть третє число'))
+				// let fourthNum = parseFloat(prompt('Введіть четверте число'))
+				// // -----------------------------------------------------------
+				// let result = getProductNum(firstNum, secondNum, thirdNum, fourthNum)
+				// document.write(`Добуток введених 4х чисел = ${result} <br>`)
+
+				// let sum = getSumNum(firstNum, secondNum, thirdNum, fourthNum)
+				// document.write(`Сума введених 4х чисел = ${sum} <br>`)
+
+				// let average = getAverageNum(firstNum, secondNum, thirdNum, fourthNum)
+				// document.write(`Середнє арифметичне число серед введених 4х чисел = ${average} <br>`)
+
+				// let minNum = getMinNum(firstNum, secondNum, thirdNum, fourthNum)
+				// document.write(`Мшнімальне число серед введених 4х чисел = ${minNum} <br>`)
+
+				// =========2 version==================================================================
+
+				let resultProduct = (num1, num2, num3, num4) => num1 * num2 * num3 * num4
+				// -----------------------------------------------------------------------
+				let sum = (num1, num2, num3, num4) => num1 + num2 + num3 + num4
+				// -----------------------------------------------------------------------
+				let average = (num1, num2, num3, num4) => (num1 + num2 + num3 + num4) / 4
+				// -----------------------------------------------------------------------
+				let min = (num1, num2, num3, num4) => {
+					let m1
+					m1 = num1 < num2 ? num1 : num2
+					let m2
+					m2 = num3 < num4 ? num3 : num4
+					let result
+					result = m1 < m2 ? m1 : m2
+					return result
+				}
+
+				let firstNum = parseFloat(prompt('Введіть перше число'))
+				let secondNum = parseFloat(prompt('Введіть друге число'))
+				let thirdNum = parseFloat(prompt('Введіть третє число'))
+				let fourthNum = parseFloat(prompt('Введіть четверте число'))
+
+				let result = resultProduct(firstNum, secondNum, thirdNum, fourthNum)
+				document.write(`Добуток введених 4х чисел = ${result} <br>`)
+
+				let sumNum = sum(firstNum, secondNum, thirdNum, fourthNum)
+				document.write(`Сума введених 4х чисел = ${sumNum} <br>`)
+
+				let averageNum = average(firstNum, secondNum, thirdNum, fourthNum)
+				document.write(`Середнє арифметичне число серед введених 4х чисел = ${averageNum} <br>`)
+
+				let minNum = min(firstNum, secondNum, thirdNum, fourthNum)
+				document.write(`Середнє арифметичне число серед введених 4х чисел = ${minNum} <br>`)
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

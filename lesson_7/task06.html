@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 6</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				// Задача 7. Створити функцію, яка випадковим чином виводить на екран одне із 4 зображень
+				//  (шляхи до зображень передаються у функцію)
+				let imageRandom = () => 1 + Math.floor(Math.random() * 4)
+
+				// const imgNum = `img/img${imageRandom()}.jpg`
+				// document.write(`<img src="${imgNum}">`)
+				document.write(`<img src="img/img${imageRandom()}.jpg">`)
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

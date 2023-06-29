@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 5</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				// Задача 4. Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: 
+				// кількість парних, кількість додатних, кількість більших за 100.
+
+				function evenNum(num1, num2, num3) {
+					let result = 0
+					if (num1 % 2 === 0)
+						result += 1
+					if (num2 % 2 === 0)
+						result += 1
+					if (num3 % 2 === 0)
+						result += 1
+					return result
+				}
+				function positiveNum(num1, num2, num3) {
+					let result = 0
+					if (num1 > 0)
+						result += 1
+					if (num2 > 0)
+						result += 1
+					if (num3 > 0)
+						result += 1
+					return result
+				}
+				function getNumGreaterThan100(params) {
+					let result = 0
+					if (num1 > 100)
+						result += 1
+					if (num2 > 100)
+						result += 1
+					if (num3 > 100)
+						result += 1
+					return result
+				}
+
+
+				let num1 = parseInt(prompt('Введіть перше будь яке ціле число'))
+				let num2 = parseInt(prompt('Введіть друге будь-яке ціле число'))
+				let num3 = parseInt(prompt('Введіть третє будь яке ціле число'))
+
+				let result = evenNum(num1, num2, num3)
+				document.write(`Кількість парних чисел = ${result} <br>`)
+				let res = positiveNum(num1, num2, num3)
+				document.write(`Кількість додатніх чисел = ${res} <br>`)
+				let numGreaterThat100 = getNumGreaterThan100(num1, num2, num3)
+				document.write(`Кількість чисел, які більші за 100 = ${numGreaterThat100} <br>`)
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

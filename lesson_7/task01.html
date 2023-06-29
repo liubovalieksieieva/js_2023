@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 1</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 1</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				// Задача 0. Створити функцію, яка за номером місяця повертає пору року, до якої відноситься
+				//  цей місяць.
+				function getSeason(value) {
+					let result
+					switch (value) {
+						case 12:
+						case 1:
+						case 2: result = 'It is winter'
+							break;
+						case 3:
+						case 4:
+						case 5: result = 'It is spring'
+							break;
+						case 6:
+						case 7:
+						case 8: result = 'It is summer'
+							break;
+						case 9:
+						case 10:
+						case 11: result = 'It is autumn'
+							break;
+					}
+					return result
+				}
+				let season = parseInt(prompt('Введіть номер місяця'));
+				document.write(getSeason(season));
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>
