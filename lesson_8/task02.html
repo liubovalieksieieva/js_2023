@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 2</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 2</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				// Задача 2. Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран:
+				// номери днів, протягом яких кількість відвідувачів була меншою за 20;
+				// номери днів, коли кількість відвідувачів була мінімальною;
+				// номери днів, коли кількість відвідувачів була мінімальною;
+				// загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.
+				function getBayersNum(bayersNum) {
+					let array = []
+					for (let i = 0; i < 7; i++) {
+						let userBayersNum = parseInt(prompt(`Введіть кількість відвідувачів за ${i + 1}-й день`))
+						array.push(userBayersNum)
+					}
+					return array
+				}
+				let bayersNumArray = getBayersNum(7)
+				// =================================
+				function getLessThan_20Bayers(array) {
+					for (let i = 0; i < array.length; i++) {
+						if (array[i] < 20) {
+							document.write(`день, коли кількість відвідувачів була менше 20, в ${i + 1}й день кількість відвідувачів = ${bayersNumArray[i]} <br>`)
+						}
+					}
+				}
+				getLessThan_20Bayers(bayersNumArray)
+				// ===================================
+				function getMinBayers(array) {
+					let min = bayersNumArray[0]
+					let dayNum = 0
+					for (let i = 1; i < array.length; i++) {
+						if (array[i] < min) {
+							min = array[i]
+							dayNum = i
+						}
+					}
+					document.write(`в ${dayNum + 1}й день кількість відвідувачів була мінімальна - ${min} <br>`)
+				}
+				getMinBayers(bayersNumArray)
+				// =======================================
+				function getMaxBayers(array) {
+					let max = array[0]
+					let dayNum = 0
+					for (let i = 1; i < array.length; i++) {
+						if (array[i] > max) {
+							max = array[i]
+							dayNum = i
+						}
+					}
+					document.write(`в ${dayNum + 1}й день кількість відвідувачів була максимальна - ${max} <br>`)
+				}
+				getMaxBayers(bayersNumArray)
+				// =======================================
+				function getTotalBayersWorkingDays(array) {
+					let sumTotalWorkingDays = 0
+					for (let i = 0; i < array.length - 2; i++) {
+						sumTotalWorkingDays += array[i]
+					}
+					return sumTotalWorkingDays
+				}
+				document.write(`Загальна кількість відвідувачів в робочі дні = ${getTotalBayersWorkingDays(bayersNumArray)}<br>`)
+				// ======================================
+				function getTotalBayersWeekendDays(array) {
+					let totalBayersWeekendDays = 0
+					for (let i = 5; i < array.length; i++) {
+						totalBayersWeekendDays += array[i]
+					}
+					return totalBayersWeekendDays
+				}
+				document.write(`Загальна кількість відвідувачів в вихідні дні = ${getTotalBayersWeekendDays(bayersNumArray)}<br>`)
+
+
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

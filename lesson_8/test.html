@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 1</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 1</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				// Задача.Дано вартості товарів, яку купив користувач. Знайти суму всіх товарів
+				// let userPrices = []
+				// for (let i = 0; i < 5; i++) {
+				// 	userPrices[i] = parseFloat(prompt('Введіть суми придбаних товарів'))
+				// }
+				// document.write(userPrices)
+
+				// let sumPrices = userPrices[0]
+				// for (let i = 1; i < userPrices.length; i++) {
+				// 	sumPrices += userPrices[i]
+				// }
+				// alert(sumPrices)
+				// ======================================================================================================
+				// Задача. Дано вік 7х учнів, знайти вік найстаршого
+				// let studentsNumber = parseInt(prompt('Введіть кількість учнів'))
+				// let studentsAges = []
+				// for (let i = 0; i < studentsNumber; i++) {
+				// 	let studentAge = parseInt(prompt(`Введіть вік ${i}-го студента`))
+				// 	studentsAges.push(studentAge)
+				// }
+				// document.write(studentsAges)
+
+				// let maxAge = studentsAges[0]
+				// for (let i = 1; i < studentsAges.length; i++) {
+				// 	if (studentsAges[i] > maxAge) maxAge = studentsAges[i]
+				// }
+				// alert(maxAge)
+				// =======================================================================================================
+				// Задача. Дано розміри доходу магазину за кожен місяць протягом року.Знайти
+				// 1) Загальний дохід за рік: 1 - 12міс
+				// 2)Загальний дохід за 1ше півріччя 1 - 6
+				// 3) Загальний дохід за друге півріччя 7 - 12
+				// 4) Загальний дохід за 2й квартал 4 - 6
+				// 5)Загальний дохід за 2й і 3й квартал 4 - 9
+
+				// let income = []
+				// for (let i = 0; i < 12; i++) {
+				// 	let money = parseFloat(prompt(`Введіть прибуток за ${i + 1} місяць `))
+				// 	// income[i] = money
+				// 	income.push(money)
+				// }
+				// =========================================================================
+				// function getUserIncome(length) {
+				// 	let array = []
+				// 	for (let i = 0; i < length; i++) {
+				// 		let userIncome = parseFloat(prompt(`Введіть прибуток за ${i + 1}й місяць`))
+				// 		array.push(userIncome)
+				// 	}
+				// 	return array
+				// }
+
+				// let income = getUserIncome(12)
+				// console.log(income)
+				// let sum = 0
+				// for (let i = 0; i < income.length; i++) {
+				// 	sum += income[i]
+				// }
+				// console.log(sum)
+				// ======================================================================================================
+				// // задача. Знайти суму цін товарів більших за 100. Кількість товарів і ціни вводяться з клав.
+				// let productsNum = parseInt(prompt(`Введіть кількість товарів`))
+				// // let pricesProducts = []
+				// // for (let i = 0; i < productsNum; i++) {
+				// // 	let prices = parseFloat(prompt(`Введіть ціну ${i + 1} товару`))
+				// // 	pricesProducts.push(prices)
+				// // }
+				// function getPricesArray(productsNum) {
+				// 	let array = []
+				// 	for (let i = 0; i < productsNum; i++) {
+				// 		let userPrices = parseFloat(prompt(`введіть ціну ${i + 1}го товару`))
+				// 		array.push(userPrices)
+				// 	}
+				// 	return array
+				// }
+				// let pricesProducts = getPricesArray(productsNum)
+				// console.log(pricesProducts)
+				// // let sumMore100 = 0
+				// // for (let i = 0; i < pricesProducts.length; i++) {
+				// // 	if (pricesProducts[i] > 100) {
+				// // 		sumMore100 += pricesProducts[i]
+				// // 	}
+				// // }
+				// // console.log(sumMore100)
+				// function getSummMore100(pricesProducts) {
+				// 	let sum = 0
+				// 	for (let i = 0; i < pricesProducts.length; i++) {
+				// 		if (pricesProducts[i] > 100)
+				// 			sum += pricesProducts[i]
+				// 	}
+				// 	return sum
+				// }
+				// let summMore100 = getSummMore100(pricesProducts)
+				// document.write(summMore100)
+				// ========================================================================================================================
+				// Дано вартості товарів. Для тих, які більші за 1000 відняти 200.
+				// let pricesCount = parseInt(prompt(`Введіть кількість товарів`))
+				// function getPricesArray(prices) {
+				// 	let price = []
+				// 	for (let i = 0; i < prices; i++) {
+				// 		let userPrices = parseFloat(prompt(`Введіть ціну ${i + 1} го товару`))
+				// 		price.push(userPrices)
+				// 	}
+				// 	return price
+				// }
+				// function addDiscount(prices) {
+				// 	for (let i = 0; i < prices.length; i++) {
+				// 		if (prices[i] > 1000)
+				// 			prices[i] -= 200
+				// 	}
+				// 	return prices
+				// }
+
+				//  let userPrices = getPricesArray(pricesCount)
+				// let userPrices = [1200, 200, 3500, 4500, 300]
+				// console.log(userprices)
+				// document.write(userprices)
+				// let discount = addDiscount(userPrices)
+				// console.log(discount)
+				// document.write(`Ціна товару зі знижкою ${discount}`)
+				// ===============================================================================
+				// Створити функцію яка приймає рік виходу на пенсію, та довільну к-сть значень років працівників.
+				// Визначити к - сть працівників пенсійного віку
+				// function getPensionerCount(pensionerAge, ...workerAges) {
+				// 	let pensionerCount = 0
+				// 	for (let i = 0; i < workerAges.length; i++) {
+				// 		if (workerAges[i] >= pensionerAge)
+				// 			pensionerCount++
+				// 	}
+				// 	return pensionerCount
+				// }
+				// let result = getPensionerCount(65, 25, 36, 38, 45, 72, 68, 62, 65, 66)
+				// document.write(result)
+				// =====================================================================================
+				// Дано покази температурю Підрахувати к-сть у заданому діапазоні
+				// function getTemperatureCount(min, max, ...temp) {
+				// 	let temperatureCount = 0
+				// 	for (let i = 0; i < temp.length; i++) {
+				// 		if (temp[i] >= min && temp[i] <= max)
+				// 			temperatureCount++
+				// 	}
+				// 	return temperatureCount
+				// }
+				// let result = getTemperatureCount(10, 20, 2, 4, 12, 16, 18, 2, 4, 19, 14, 8, 10, 1, 3)
+				// document.write(result)
+				// ========================================================================================
+				//  Дано покази температурю Розробити функцію , яка дозволить знайти середю темп. для додатніх показів
+				// function getPositiveAverageTemperature() {
+				// 	let positiveTemp = 0
+				// 	let positiveNumber = 0
+				// 	for (let i = 0; i < arguments.length; i++) {
+				// 		if (arguments[i] > 0) {
+				// 			positiveTemp += arguments[i]
+				// 			positiveNumber++
+				// 		}
+				// 	}
+				// 	return positiveTemp / positiveNumber
+				// }
+				// let result = getPositiveAverageTemperature(- 2, 5, 10, 5, 20, - 3)
+				// document.write(result)
+				// =============================================================================
+				// Створити функцію яка виводить на екран можливі значення секунд на годиннику
+				// function printSeconds() {
+				// 	for (let sec = 1; sec <= 60; sec++) {
+				// 		let prefix = sec < 10 ? '0' : ''
+				// 		document.write(`${prefix}${sec}<br>`)
+				// 	}
+				// }
+				// printSeconds()
+				// =============================================================================
+				// Задача. з Клавіатури вводять числа до тих пір поки послідовність є зростаючою або спадною.
+				// let num1 = parseInt(prompt(`введіть перше число`))
+				// let num2 = parseInt(prompt(`введіть друге число`))
+				// let different = num2 - num1
+				// 5 9            10  12
+				//  4        *        2    different > 0
+				// 7 4             5  3
+				//  -3      *         -2   different > 0
+				//  7  3           5  9
+				//    -4      *       4    different < 0
+
+				// do {
+				// 	num1 = num2
+				// 	num2 = parseInt(prompt('наступне число'))
+				// } while ((num2 - num1) * different > 0);
+				// ===============================================================================
+				//
+				// let a = [1, 2, 3, 4]
+				// let b = [2, 4, 3, 1]
+				// let x = [3, 5, 4, 2]
+				// function func(a, b) {
+				// 	x = new Array(a.length)
+				// 	for (let i = 0; i < a.length; i++) {
+				// 		x[i] = a[i] + b[i]
+				// 	}
+				// 	return x
+				// }
+				// x = func(a, b)
+				// console.log(x)
+				// ===================================
+				// let a = [1, 8, 3, 4];
+				// let b = [5, 4, 7, 1];
+				// let x = [3, 1, 4, 2];
+				// var func = function (x, a, b) {
+				// 	x = new Array(a.length + b.length);
+				// 	for (let i = 0; i < a.length; i++)
+				// 		x[i] = a[i];
+				// 	for (let i = 0; i < b.length; i++)
+				// 		x[i + a.length] = b[i];
+				// 	return x;
+				// }
+				// let y = func(x, a, b)
+				// console.log(y)
+				// ======================================
+				// let x = 5, a = 3, b = 4;
+				// function func(a, b, x) {
+				// 	return [
+				// 		x % 2,
+				// 		x / 2 - a
+				// 	]
+				// }
+				// let result = func(3, 4, 5)
+				// console.log(result)
+				// ========================================
+				// let n = 2, a = 3, b = 2;
+				// function func(a, b, n) {
+				// 	a = Math.pow(b, n) - b;
+				// 	return a;
+				// }
+				// a = func(a, b, n);
+				// console.log(a)
+				// ==========================================
+				// let x = ['d', 'a', 'y']
+				// let a = "day, "
+				// function func(x, a) {
+				// 	for (let i = 0; i < x.length; i++)
+				// 		a += x[i] + ", ";
+				// 	return a
+				// }
+				// let s = func(x, a)
+				// console.log(s)
+				// =========================================
+				// let x = ['d', 'y', 's', 'a']
+				// let a = "days, "
+				// function func(x, a) {
+				// 	a += x[0];
+				// 	a += x[3];
+				// 	a += x[1];
+				// 	a += x[2];
+				// 	return a
+				// }
+				// let s = func(x, a)
+				// console.log(s)
+				// ===================================
+				// let n = 2;
+				// let a = 3;
+				// let b = 2;
+				// function func(a, b, n) {
+				// 	return (b - a) / n;
+				// }
+				// a = func(a, b, n)
+				// console.log(a)
+				// ====================================
+				// let a = [1, 6, 4, 7, 3]
+				// function func(a) {
+				// 	let temp;
+				// 	for (let i = 0; i < a.length; i++) {
+				// 		for (let j = a.length - 1; j > i; j--) {
+				// 			if (a[j] < a[j - 1]) {
+				// 				temp = a[j];
+				// 				a[j] = a[j - 1];
+				// 				a[j - 1] = temp;
+				// 			}
+				// 		}
+				// 	}
+				// 	return a;
+				// }
+				// a = func(a)
+				// console.log(a)
+				// ===========================
+				// let a = [2, 5, 4, 7, 1, 4];
+
+				// function func(...a) {
+				// 	let i = 0;
+				// 	for (let j = 0; j < a.length; j++)
+				// 		if (a[j] < i)
+				// 			i = a[j];
+				// 	return i;
+				// }
+				// let p = func(...a)
+				// console.log(p)
+
+
+
+
+
+
+
+
+
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

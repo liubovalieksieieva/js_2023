@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 1</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 1</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				// Задача 1. Дано масив, який містить оцінки з К предметів.Знайти середній бал і з’ясувати 
+				// до якої категорії він відноситься(відмінник, двійочник(має хоча би одну двійку), 
+				// хорошист(оцінки добре і відмінно), трійочник(є хоча би одна трійка)).
+				function getMinScore(scores) {
+					let minScore = scores[0]
+					for (let i = 0; i < scores.length; i++) {
+						if (minScore > scores[i]) minScore = scores[i]
+					}
+					return minScore
+				}
+				function getStudentsCategory(scores) {
+					let category
+					switch (getMinScore(scores)) {
+						case 1:
+						case 2:
+							category = 'Двійочник'
+							break;
+						case 3:
+							category = 'трійочник'
+							break;
+						case 4:
+							category = 'хорошист'
+							break;
+						case 5:
+							category = 'відмінник'
+							break;
+						default:
+							throw new Error('некоректна оцінка')
+							break;
+					}
+					return category
+				}
+				let scoresNum = parseInt(prompt('Введіть кількість оцінок'))
+				let scores = []
+				for (let i = 0; i < scoresNum; i++) {
+					let userScores = parseInt(prompt(`Введіть ${i + 1}у оцінку`))
+					scores.push(userScores)
+				}
+				document.write(getStudentsCategory(scores))
+
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

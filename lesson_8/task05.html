@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 3</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 5</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				// Задача 5. Дано послідовність оцінок учня. Підрахувати кількість:
+				// 1) двійок
+				// 2)	кількість хороших оцінок(добре, відмінно);
+				// 3)	кількість оцінок, які нижче середнього.
+				let numScores = parseInt(prompt('Введіть кількість оцінок'))
+				function getScores(numScores) {
+					let array = []
+					for (let i = 0; i < numScores; i++) {
+						let userScores = parseInt(prompt(`Введіть ${i + 1}у оцінку`))
+						array.push(userScores)
+					}
+					return array
+				}
+				let userScores = getScores(numScores)
+				console.log(userScores)
+				// ====================================================
+				function getNumScoresTwo(array) {
+					let sumScore_2 = 0
+					for (let i = 0; i < array.length; i++) {
+						if (array[i] === 2) {
+							sumScore_2++
+						}
+					}
+					return sumScore_2
+				}
+				console.log(getNumScoresTwo(userScores))
+
+				function getNumGoodScores(array) {
+					let sumGoodScores = 0
+					for (let i = 0; i < array.length; i++) {
+						if (array[i] >= 4) {
+							sumGoodScores++
+						}
+					}
+					return sumGoodScores
+				}
+				console.log(getNumGoodScores(userScores))
+
+				function getScoresAverage(array) {
+					let averageScore = 0
+					for (let i = 0; i < array.length; i++) {
+						averageScore += array[i]
+					}
+					return averageScore / array.length
+				}
+				console.log(getScoresAverage(userScores))
+				function getNumScoresBelowAverage(array) {
+					let num = 0
+					for (let k = 0; k < array.length; k++) {
+						if (array[k] <= getScoresAverage(array))
+							num++
+					}
+					return num
+				}
+				console.log(getNumScoresBelowAverage(userScores))
+
+				document.write(`Кількість двійок: ${getNumScoresTwo(userScores)}<br>`);
+				document.write(`кількість хороших оцінок ${getNumGoodScores(userScores)}<br>`);
+				document.write(`кількість оцінок, які нижче середнього ${getNumScoresBelowAverage(userScores)}<br>`)
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

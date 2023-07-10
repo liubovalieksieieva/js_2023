@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 3</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 4</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				// Задача 4. Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які :
+				// •	починаються на букву «А»;
+				// •	перша і остання літери співпадають;
+				// •	складаються з більше ніш 5 символів;
+				let carsNum = parseInt(prompt('Введіть кількість автомобілів'))
+				function getCarNum(carNumbers) {
+					let array = []
+					for (let i = 0; i < carsNum; i++) {
+						let carNum = prompt(`Введіть номер ${i + 1}-го автомобіля`)
+						array.push(carNum)
+					}
+					return array
+				}
+				let carNumbers = getCarNum(carsNum)
+				console.log(carNumbers)
+				// ================================
+				function getCarNumStartA(array) {
+					let sum = 0
+					for (let i = 0; i < array.length; i++) {
+						if (array[i][0] == 'A') {
+							sum++
+						}
+					}
+					return sum
+				}
+				getCarNumStartA(carNumbers)
+				document.write(`Кількість номерів,які починаються на А ${getCarNumStartA(carNumbers)} <br>`)
+				// ===========================================
+				function getFirstAndLastLetters(array) {
+					let sum = 0
+					for (let i = 0; i < array.length; i++) {
+						let a = array[i]
+						let b = a.length
+						if (a[0] == a[b - 1]) {
+							sum++
+						}
+					}
+					return sum
+				}
+				document.write(`Кількість номерів,які починаються і закінчуюються однаково ${getFirstAndLastLetters(carNumbers)} <br>`)
+				// ========================================================
+				function getLengthNumMore_5(array) {
+					let sum = 0
+					for (let i = 0; i < array.length; i++) {
+						let a = array[i]
+						let b = a.length
+						if (b > 5) {
+							sum++
+						}
+					}
+					return sum
+				}
+				document.write(`Кількість номерів,які складаються більше ніж з 5 символів ${getLengthNumMore_5(carNumbers)} <br>`)
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>
