@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 8</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 8</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				// 8. Дано масив номерів авто.Сформувати новий масив тих, які починаються на «А»
+				let carsNumbers = ['AA123', 'VF258', 'AT8745', 'WE6587', '123AW']
+				// =============функція з FOR ===============================
+				// function getArrayLetter_A(array) {
+				// 	let arrayLetter_A = []
+				// 	for (let i = 0; i < array.length; i++) {
+				// 		if (array[i][0] === 'A') {
+				// 			arrayLetter_A.push(array[i])
+				// 		}
+				// 	}
+				// 	return arrayLetter_A
+				// }
+				// let arrayLetter_A = getArrayLetter_A(carsNumbers)
+				// console.log(arrayLetter_A)
+				// =====================функція з FOR ....OF =====================================
+				// function getArrayLetter_A(array) {
+				// 	let newArray = []
+				// 	for (const item of array) {
+				// 		if (item[0] === 'A') {
+				// 			newArray.push(item)
+				// 		}
+				// 	}
+				// 	return newArray
+				// }
+				// let result = getArrayLetter_A(carsNumbers)
+				// console.log(result)
+				// =======================FOR...OF========================
+				let newArray = []
+				for (const item of carsNumbers) {
+					if (item[0] === 'A') {
+						newArray.push(item)
+					}
+				}
+				console.log(newArray)
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

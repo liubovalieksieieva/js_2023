@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 7</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 7</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				// 7.Дано масив цін.Змінити цей масив так, що на ціни товарів, які більші за 1000 грн.дати 30 % знижки.
+				let prices = [125, 250, 36, 1100, 2000, 5000, 128, 2500]
+				prices.forEach((element, index, baseArr) => {
+					if (element > 1000) {
+						baseArr[index] *= 0.7
+					}
+				});
+				console.log(prices)
+
+
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>
