@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 2</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 2</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				// Задача 2. Дано інформацію про прибуток К магазинів протягом тижня.Знайти :
+				// 1) загальний прибуток кожного масиву за тиждень;
+				let numberOfShops = parseInt(prompt('Введіть кільіксть магазинів'))
+				let minProfit = 1000
+				let maxProfit = 5000
+				let numWeekDays = 7
+
+				function getRandomNum(minValue, maxValue) {
+					return minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+				}
+				function generateProfitOfWeek(arrayLength, minValue, maxValue) {
+					let arr = []
+					for (let index = 0; index < arrayLength; index++) {
+						let randomPrice = getRandomNum(minValue, maxValue)
+						arr.push(randomPrice)
+					}
+					return arr
+				}
+				function generateProfitArray(rowsNum, columnsNum, minValue, maxValue) {
+					let arr = []
+					for (let i = 0; i < rowsNum; i++) {
+						let profitShopOfWeek = generateProfitOfWeek(columnsNum, minValue, maxValue)
+						arr.push(profitShopOfWeek)
+					}
+					return arr
+				}
+				let profitPerShops = generateProfitArray(numberOfShops, numWeekDays, minProfit, maxProfit)
+				console.log(profitPerShops)
+
+				let profitEveryShopPerWeek = profitPerShops.map((shop) => shop.reduce((prevSum, profit) => prevSum + profit, 0))
+				document.write(`Прибуток кожного магазину за тиждень ${profitEveryShopPerWeek}<br>`)
+
+				// ===================================================================================
+				// 2) загальний прибуток усіх магазинів по дням(загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д.);
+				let days = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд']
+				let totalSumByDay = days.map((days, index) => profitPerShops.reduce((prevSum, day) => prevSum + day[index], 0))
+				document.write(`Сума прибутку всіх магазинів по дням ${totalSumByDay}<br>`)
+				// ======================================================================================================
+				// 3) загальний прибуток за робочі дні
+				// let profitPerWorkingDays
+				function getProfitPerWorkingDays(array, workingDays) {
+					let sum = 0
+					for (let i = 0; i < array.length; i++) {
+						for (let j = 0; j < workingDays; j++) {
+							sum += array[i][j]
+						}
+					}
+					return sum
+				}
+				let numWorkingDay = 5
+				let profitPerWorkingDays = getProfitPerWorkingDays(profitPerShops, numWorkingDay)
+				document.write(`Загальний прибуток за робочі дні ${profitPerWorkingDays}<br>`)
+				// ====================================================================================================
+				// 4) загальний прибуток за вихідні дні
+				function getprofitPerWeekendDays(array) {
+					let sum = 0
+					for (let i = 0; i < array.length; i++) {
+						for (let j = 5; j <= 6; j++) {
+							sum += array[i][j]
+						}
+					}
+					return sum
+				}
+				let profitPerWeekendDays = getprofitPerWeekendDays(profitPerShops)
+				document.write(`Прибуток магазинів за вихідні дні ${profitPerWeekendDays}<br>`)
+				// ======================================================================================================
+				// 5) максимальний прибуток за середу
+				let indexColumnWednesday = 2
+				function getMaxSumWednesday(array, dayIndex) {
+					let max = 0
+					for (let i = 0; i < array.length; i++) {
+						if (array[i][dayIndex] > max) {
+							max = array[i][dayIndex]
+						}
+					}
+					return max
+				}
+				let maxSumWednesday = getMaxSumWednesday(profitPerShops, indexColumnWednesday)
+				console.log(maxSumWednesday)
+				// =====================================================================================================
+				// 6) сформувати загальний список (одновимірний масив) зі значенням, які що більші за 200
+
+				let profitMore_200 = profitPerShops.flat(Infinity).filter((element) => element > 3000)
+				console.log(profitMore_200)
+
+
+
+
+
+
+
+
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>
