@@ -44,7 +44,7 @@
 					return table
 				}
 				let rowsNum = 4
-				let columnsNum = 5
+				let columnsNum = 6
 				minValue = 1
 				maxValue = 20
 				let newArray = generateRandomTable(rowsNum, columnsNum, minValue, maxValue)
@@ -52,61 +52,63 @@
 				// ========================сума елементів у 1 області=====================================
 
 				let summFirstRow = 0
-				for (let rowNum = 0; rowNum < 1; rowNum++) {
-					for (let columnNum = 0; columnNum < newArray[0].length; columnNum++) {
+				let row = Math.floor(newArray.length / 2)
+
+				for (let rowNum = 0; rowNum < row; rowNum++) {
+					let column = newArray[rowNum].length / 2
+					for (let columnNum = 0; columnNum < column; columnNum++) {
 						summFirstRow += newArray[rowNum][columnNum]
 					}
 				}
 				console.log(summFirstRow)
 
-				// =========================сума елементів у 2 області================================================
+				// =========================сума елементів у 4 області================================================
 				let summSecondRow = 0
-				for (let rowNum = 1; rowNum < 2; rowNum++) {
-					for (let columnNum = 0; columnNum < newArray[1].length; columnNum++) {
+				for (let rowNum = row; rowNum < newArray.length; rowNum++) {
+					let column = newArray[rowNum].length / 2
+					for (let columnNum = column; columnNum < newArray[rowNum].length; columnNum++) {
 						summSecondRow += newArray[rowNum][columnNum]
 					}
 				}
 				console.log(summSecondRow)
 
-				// ============================сума елементів у 3 області================================================================
+				// // ============================сума елементів у 2 області================================================================
 				let summThirdRow = 0
-				for (let rowNum = 2; rowNum < 3; rowNum++) {
-					for (let columnNum = 0; columnNum < newArray[2].length; columnNum++) {
+				for (let rowNum = 0; rowNum < row; rowNum++) {
+					let column = newArray[rowNum].length / 2
+					for (let columnNum = column; columnNum < newArray[rowNum].length; columnNum++) {
 						summThirdRow += newArray[rowNum][columnNum]
 					}
 				}
 				console.log(summThirdRow)
 
-				// ============================сума елементів у 4 області================================================================================
+				// // ============================сума елементів у 3 області================================================================================
 				let summFourthRow = 0
-				for (let rowNum = 3; rowNum < newArray.length; rowNum++) {
-					for (let columnNum = 0; columnNum < newArray[3].length; columnNum++) {
+				for (let rowNum = row; rowNum < newArray.length; rowNum++) {
+					let column = newArray[rowNum].length / 2
+					for (let columnNum = 0; columnNum < column; columnNum++) {
 						summFourthRow += newArray[rowNum][columnNum]
 					}
 				}
 				console.log(summFourthRow)
-				// ==============================================================================================
+				// // ==============================================================================================
 				// 5) Суму парних рядків
 				let summEvenRows = 0
-				for (let rowNum = 0; rowNum < newArray.length; rowNum++) {
-					if (rowNum % 2 === 0) {
-						for (let columnNum = 0; columnNum < newArray[rowNum].length; columnNum++) {
-							summEvenRows += newArray[rowNum][columnNum]
-						}
+				for (let rowNum = 0; rowNum < newArray.length; rowNum += 2) {
+					for (let columnNum = 0; columnNum < newArray[rowNum].length; columnNum++) {
+						summEvenRows += newArray[rowNum][columnNum]
 					}
 				}
-				console.log(summEvenRows)
+				console.log(`Сума парних рядків = ${summEvenRows}`)
 				// ============================================================================================
 				// 6) Суму непарних стовпців
 				let summOddColumns = 0
-				for (let rowNum = 0; rowNum < newArray.length; rowNum++) {
+				for (let rowNum = 1; rowNum < newArray.length; rowNum += 2) {
 					for (let columnNum = 0; columnNum < newArray[rowNum].length; columnNum++) {
-						if (columnNum % 2 !== 0) {
-							summOddColumns += newArray[rowNum][columnNum]
-						}
+						summOddColumns += newArray[rowNum][columnNum]
 					}
 				}
-				console.log(summOddColumns)
+				console.log(`Сума непарних стовпців = ${summOddColumns}`)
 				// ===========================================================================================
 				// 7) У парних рядках – непарні стовпці, у непарних – парні.
 
