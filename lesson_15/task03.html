@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 4</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 3</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				// Розробити клас MultChecker для перевірки таблиці множення
+				// -------------опис- властивосі --------------------------
+				// Число, яке перевіряємо(наприклад, перевірка частини таблиці множення на 7)
+				// Кількість правильних відповідей
+				// Кількість неправильних відповідей
+				class MultiCheker {
+					constructor(number) {
+						this.number = number,
+							this.correctAnswer = 0,
+							this.incorrectAnswer = 0
+					}
+					// ----------------методи---------------------
+					// Генерування прикладу(метод випадковим чином визначає друге число, перше число фіксоване)
+					// Перевірка правильності вказаної відповіді
+					// render
+					getRandomNum(maxValue = 1, minValue = 10) {
+						return minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+					}
+					generateExample() {
+						while (confirm('Граємо?')) {
+							let secondNum = this.getRandomNum()
+							let userResult = parseInt(prompt(`${this.number} * ${secondNum}`))
+							let resultProduct = this.number * secondNum
+							if (userResult === resultProduct) {
+								this.correctAnswer++
+							}
+							else {
+								alert(`Правильна відповідь ${resultProduct}`)
+								this.incorrectAnswer++
+							}
+						}
+					}
+					render() {
+						document.write(`Перевірка таблиці множення на ${this.number} <br>
+							Кількість правильних відповідей - ${this.correctAnswer} <br>
+							Кількість невірних відповідей - ${this.incorrectAnswer}`)
+					}
+				}
+				let userAnswer = parseInt(prompt('Введіть число на яке хочете множити'))
+				let result = new MultiCheker(userAnswer)
+				result.generateExample()
+				result.render()
+
+
+
+
+
+
+
+
+
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

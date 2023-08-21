@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">test</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+
+				// let autoList = [
+				// 	{
+				// 		model: 'BMW',
+				// 		productionYear: 2002,
+				// 		weight: 1700,
+				// 		owner: 'Ivan'
+				// 	},
+				// 	{
+				// 		model: 'Audi',
+				// 		productionYear: 2015,
+				// 		weight: 1900,
+				// 		owner: 'Olga'
+				// 	},
+				// 	{
+				// 		model: 'Mitsubishi',
+				// 		productionYear: 2022,
+				// 		weight: 1800,
+				// 		owner: 'Oleksandr'
+				// 	},
+				// 	{
+				// 		model: 'Waz',
+				// 		productionYear: 2012,
+				// 		weight: 1800,
+				// 		owner: 'Oleksiy'
+				// 	},
+				// 	{
+				// 		model: 'Opel',
+				// 		productionYear: 2022,
+				// 		weight: 1600,
+				// 		owner: 'Kate'
+				// 	}
+				// ]
+				// let autoTotalweight = autoList.reduce((prevTotalWeight, auto) => prevTotalWeight + auto.weight, 0)
+				// console.log(autoTotalweight)
+				// let autoYear = autoList.filter((year) => year.productionYear > 2002)
+				// console.log(autoYear);
+				// const weight = autoList.filter((weight) => weight.weight > 1800)
+				// console.log(weight);
+				// ===============================================================================================================
+
+				// let booksList = [
+				// 	{
+				// 		title: 'Title 0',
+				// 		author: 'Author 0',
+				// 		year: 2001,
+				// 		price: 235,
+				// 		count: 200
+				// 	},
+				// 	{
+				// 		title: 'Title 1',
+				// 		author: 'Author 1',
+				// 		year: 2012,
+				// 		price: 500,
+				// 		count: 2000
+				// 	},
+				// 	{
+				// 		title: 'Title 2',
+				// 		author: 'Author 2',
+				// 		year: 2016,
+				// 		price: 1050,
+				// 		count: 80
+				// 	},
+				// 	{
+				// 		title: 'Title 3',
+				// 		author: 'Author 3',
+				// 		year: 2022,
+				// 		price: 300,
+				// 		count: 2500
+				// 	},
+				// 	{
+				// 		title: 'Title 4',
+				// 		author: 'Author 4',
+				// 		year: 2010,
+				// 		price: 1000,
+				// 		count: 20
+				// 	}
+				// ]
+				// let namesCount = booksList.length
+				// console.log(namesCount);
+				// const totalCount = booksList.reduce((prevTotalCount, book) => prevTotalCount + book.count, 0)
+				// console.log(totalCount);
+				// // кількість книг(екземплярів), що видана після 2010р,
+				// const totalBooksCount = booksList.reduce((prevTotalSum, book) => book.year > 2010 ? prevTotalSum + book.count : prevTotalSum, 0)
+				// console.log(totalBooksCount);
+				// // знайти загальну вартість кожної книги( вартість книги помножити на кількість примірників)
+				// const totalPriceEveryBook = booksList.map((book) => book.price * book.count)
+				// console.log(totalPriceEveryBook);
+				// // отримати масив авторів кожної книги
+				// const author = booksList.map((book) => book.author)
+				// console.log(author);
+				// //==================================================================================
+				// const newObject = booksList.map((book) => ({ title: book.title, author: book.author, total: book.price * book.count }))
+				// console.log(newObject);
+				// ================================================================================
+				// if (booksList.some((book) => book.year > 2012)) {
+				// 	document.write('yes')
+				// }
+				// else
+				// 	document.write('no')
+				// ================================================================================
+				// let result = booksList.every((book) => book.year > 2000)
+				// console.log(result);
+				// // ================================================================================
+				// booksList.pages = 90
+				// console.log(booksList);
+				// // ===============================================================================
+				// delete booksList.pages
+				// console.log(booksList);
+				// // ===========================================================================
+				// booksList[0].page = 120
+				// console.log(booksList)
+				// // =========================================================================
+				// let names = [
+				// 	'Ivan',
+				// 	'Kate',
+				// 	'John',
+				// 	'Pete',
+				// 	'Olga',
+				// 	'Olena',
+				// 	'Ivan',
+				// 	'Ivan',
+				// 	'Mykola',
+				// 	'Kate',
+				// 	'Olga',
+				// 	'Ivan',
+				// 	'Jesika',
+				// 	'Mykola',
+				// 	'Pete'
+				// ]
+				// let namesObject = {}
+
+				// for (const name of names) {
+				// 	if (name in namesObject) {
+				// 		namesObject[name]++
+				// 	}
+				// 	else
+				// 		namesObject[name] = 1
+				// }
+				// console.log(namesObject)
+				// =======================================
+
+				// let namesObject_1 = names.reduce((prevNamesObject, name) => {
+				// 	if (name in prevNamesObject)
+				// 		prevNamesObject[name]++
+				// 	else
+				// 		prevNamesObject[name] = 1
+				// 	return prevNamesObject
+				// }
+				// 	, {})
+				// console.log(namesObject_1)
+				// ================================================
+
+				// function checkedPersone(personeData) {
+				// 	personeData = {
+				// 		name: 'Guest',
+				// 		salary: 3500,
+				// 		year: 2023,
+				// 		month: 'January',
+				// 		day: 1,
+				// 		...personeData
+				// 	}
+				// 	document.write(`${personeData.year}- ${personeData.salary} - ${personeData.name}`)
+				// }
+				// const persone_1 = {
+				// 	name: 'Ivan',
+				// 	salary: 455520
+				// }
+				// checkedPersone(persone_1)
+				// ======================================================
+
+				//       Приклад. Гра «Рулетка»
+				// ----- Властивості -------
+				// кількість полів рулетки
+				// мінімальне значення балів
+				// максимальне значення балів
+				// список згенерованих значень
+
+				// // ----- Методи ----------
+				function Roulette(cellsNumber, minScore, maxScore) {
+					this.cellsNumber = cellsNumber,
+						this.minScore = minScore,
+						this.maxScore = maxScore,
+						this.gameField = this.generateGameField()
+				}
+				// //============ генерування полів рулетки
+				Roulette.prototype.generateGameField = function () {
+					let field = []
+					for (let sellNum = 0; sellNum < this.cellsNumber; sellNum++) {
+						let randomNum = this.getRandomNum()
+						field.push(randomNum)
+					}
+					return field
+				}
+				// // ============ генерування рандомного числа
+				Roulette.prototype.getRandomNum = function (minValue, maxValue) {
+					//якщо значення не передадуть у параметрах, то візьме minScore
+					minValue ??= this.minScore,
+						maxValue ??= this.maxScore
+					return minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+				}
+				// // ============ виведення списку згенерованих значень
+				Roulette.prototype.showField = function () {
+					document.write(this.gameField)
+				}
+				//============= приведення до рядка
+				Roulette.prototype.toString = function () {
+					return `Roulette - ${this.minScore} - ${this.maxScore}`
+				}
+				//========== крутити рулетку (отримання випадкового балу)
+				Roulette.prototype.getRandomScore = function () {
+					const randomScore = this.getRandomNum(0, this.cellsNumber - 1)
+					return this.gameField[randomScore]
+				}
+				// метод гри (користувач крутить рулетку поки не відмовиться)
+
+				Roulette.prototype.playGame = function () {
+					let totalSum = 0
+					//=======================поки користувач хоче крутити
+					while (confirm('Do you want play game?')) {
+						//========================визначаємо рандомне значення рулетки
+						const randScore = this.getRandomScore()
+						//====================додаємо до загальної суми
+						totalSum += randScore
+						//==================повідомляємо користувача про результат та загальну кількість балів
+						alert(`Score : ${randScore}, Total: ${totalSum}`)
+					}
+				}
+				let play_1 = new Roulette(10, -100, 500)
+				play_1.playGame()
+				play_1.showField()
+
+
+
+				// class Roulette {
+				// 	constructor(cellsNum, minScore, maxScore) {
+				// 		this.cellsNum = cellsNum,
+				// 			this.minScore = minScore,
+				// 			this.maxScore = maxScore,
+				// 			this.gameField = this.generateGameField()
+				// 	}
+				// 	getRandomNum(minValue, maxValue) {
+				// 		minValue ??= this.minScore,
+				// 			maxValue ??= this.maxScore
+				// 		return minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+				// 	}
+				// 	generateGameField() {
+				// 		let gameField = []
+				// 		for (let numCells = 0; numCells < this.cellsNum; numCells++) {
+				// 			let randomNum = this.getRandomNum()
+				// 			gameField.push(randomNum)
+				// 		}
+				// 		return gameField
+				// 	}
+				// 	getScore() {
+				// 		const randomScore = this.getRandomNum(0, this.cellsNum - 1)
+				// 		return this.gameField[randomScore]
+				// 	}
+				// 	playGame() {
+				// 		let totalScore = 0
+				// 		while (confirm('Do you want play game?')) {
+				// 			const score = this.getScore()
+				// 			totalScore += score
+				// 			alert(`Total Sum ${totalScore}, Score ${score}`)
+				// 		}
+				// 	}
+				// }
+				// let play_1 = new Roulette(10, -500, 500)
+				// play_1.playGame()
+
+				// Приклад. Розробити клас «Передбачувач». Дозволяє кожні вказані кількість секунд отримувати передбачення
+				// Властивості :
+				//      масив можливоих передбачень,
+				//      інтервал між передбаченнями
+				// Методи:
+				//      вибір випадкового передбачення
+				//      метод run, що ініціює запуск таймера і генерування передбачень
+
+				// class Predictor {
+				// 	constructor(predictionInterval, predictionList) {
+				// 		this.predictionInterval = predictionInterval,
+				// 			this.predictionList = predictionList
+				// 	}
+				// 	getRandomIndex() {
+				// 		let randomIndex = Math.floor(Math.random() * this.predictionList.length)
+				// 		return this.predictionList[randomIndex]
+				// 	}
+				// 	run() {
+				// 		setInterval(() => {
+				// 			alert(this.getRandomIndex())
+				// 		},
+				// 			this.predictionInterval)
+				// 	}
+				// }
+				// let predictor_1 = new Predictor(2000, ['Money', 'Work', 'Wine', 'Beer', 'Peace', 'Beach', 'Sea'])
+				// predictor_1.run()
+
+				// let obj = {
+				// 	a: 2,
+				// 	print: function () {
+				// 		document.write(this.a)
+				// 	}
+				// }
+				// let obj_1 = {
+				// 	a: 8,
+				// 	print: function () {
+				// 		document.write(this.a)
+				// 	}
+				// }
+				// let f = obj.print.bind(obj_1)
+				// f()
+				// ====================================================================
+				// Дано функцію без формальних параметрів.Знайти суму усіх аргументів, які буде передано у функцію,
+				// використавши reduce стосовно arguments
+				// function getSum() {
+				// 	return [].reduce.call(arguments, (prevSum, element) => prevSum + element)
+				// }
+				// let sum = getSum(5, 20, 25)
+				// document.write(sum)
+
+
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 2</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 1</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				// Задача 1. Створити об’єкт «Тир». У масиві зберігаються 1, якщо у цьому квадраті є заєць і 0 в іншому випадку.
+				// 
+				// опис полів--Властивості:
+				// к - сть полів тиру клітинок
+				// к - сть зайців
+				// к-сть пострілів
+				// Методи
+				// генерування ігрового поля
+				// масив з зайцями
+				// опис методів:
+				// 	- постріл
+				// 	- виведення ігрового поля
+
+
+				class ShootingGame {
+					constructor(cellNumbers, rabbitsNum, shotsNum) {
+						this.cellNumbers = cellNumbers,
+							this.rabbitsNum = rabbitsNum,
+							this.shotsNum = shotsNum,
+							this.gameField
+					}
+					createGameField() {
+						let gameField = new Array(this.cellNumbers).fill(0)
+						for (let i = 0; i < this.rabbitsNum;) {
+							const randomNum = Math.floor(Math.random() * gameField.length)
+							if (gameField[randomNum] === 0) {
+								gameField[randomNum] = 1
+								i++
+							}
+						}
+						return this.gameField = gameField
+					}
+					//============ постріл - вибір випадкового індексу масиву
+
+					gamesShooting() {
+						while (this.shotsNum > 0 && this.rabbitsNum > 0) {
+							let userAnswer = parseInt(prompt(`Введіть позицію пострілу в межах від 1 до ${this.cellNumbers}`))
+							if (this.gameField[userAnswer - 1] === 1) {
+								alert(`Ура! Ви попали`)
+								this.rabbitsNum--
+								this.shotsNum--
+								this.gameField[userAnswer - 1] = 0
+							}
+							else {
+								alert(`Упс! Спробуйте ще раз`)
+								this.shotsNum--
+							}
+						}
+					}
+					// ================ запуск гри ============================================
+					playGame() {
+						this.createGameField()
+						this.gamesShooting()
+						document.write(`Залишилося зайців - ${this.rabbitsNum}<br>`)
+						document.write(this.gameField)
+					}
+				}
+				let play_1 = new ShootingGame(8, 4, 3)
+				play_1.playGame()
+
+
+
+
+
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

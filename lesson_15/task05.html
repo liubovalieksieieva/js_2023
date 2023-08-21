@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 5</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 4</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				//  Розробити клас «Керівник танців»
+				// ---------опис властивостей
+				// Масив імен хлопців
+				// Масив імен дівчат
+				// ----------методи-------------
+				// Метод випадкового вибору імені хлопця
+				// Метод випадкового вибору імені дівчини
+				// Метод виведення пари для танців
+				// Метод run, який ініціює через кожні 5 секунд виведення нової пари для танців
+
+				let namesBoys = [
+					'Ivan',
+					'Oleg',
+					'Kyryl',
+					'Oleksandr',
+					'Oleksiy',
+					'Taras'
+				]
+				let namesGirls = [
+					'Ivanna',
+					'Toma',
+					'Kate',
+					'Sophiia',
+					'Luda',
+					'Nadiia'
+				]
+
+				class DanceDirector {
+					constructor(boysNamesList, girlsNamesList, runInterval) {
+						this.boysNamesList = boysNamesList,
+							this.girlsNamesList = girlsNamesList,
+							this.runInterval = runInterval
+					}
+					getRandomNum(maxValue, minValue) {
+						return minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+					}
+					getRandomIndexBoys() {
+						let randomIndexBoys = this.getRandomNum(0, this.boysNamesList.length - 1)
+						return this.boysNamesList[randomIndexBoys]
+					}
+					getRandomIndexGirl() {
+						let randomIndexGirls = this.getRandomNum(0, this.girlsNamesList.length - 1)
+						return this.girlsNamesList[randomIndexGirls]
+					}
+					showCouple() {
+						document.write(`${this.getRandomIndexBoys()} and ${this.getRandomIndexGirl()}<br>`)
+					}
+					run() {
+						setInterval(() => this.showCouple(), this.runInterval)
+					}
+				}
+				let showCouple = new DanceDirector(namesBoys, namesGirls, 2000)
+				// showCouple.run()
+
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

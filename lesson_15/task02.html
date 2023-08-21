@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 3</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 2</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				// Створити об’єкт «Авто».
+				// -------------властивості-----------
+				// 				Марка
+				// Розмір бака
+				// Кількість наявних літрів
+				// Кількість місць
+				// Кількість пасажирів
+				// ---------------методи----------------
+				// Заправка на вказану кількість літрів
+				// Виведення кількості пасажирів
+				// Додавання пасажирів
+				// Висадка пасажирів
+
+				class Auto {
+					constructor(title, volumeTank, amountOfFuel, numberOfSeats, numberOfPassengers) {
+						this.title = title,
+							this.volumeTank = volumeTank,
+							this.amountOfFuel = amountOfFuel,
+							this.numberOfSeats = numberOfSeats,
+							this.numberOfPassengers = numberOfPassengers
+					}
+
+					refuel(gasAmount) {
+						if (this.volumeTank >= this.amountOfFuel + gasAmount) {
+							this.amountOfFuel += gasAmount
+						}
+						else
+							throw new Error('The tank size is not enough...')
+						console.log(this.amountOfFuel)
+					}
+
+					addingPassengers(addPassengers) {
+						if (this.numberOfSeats - this.numberOfPassengers >= addPassengers) {
+							this.numberOfPassengers += addPassengers
+						}
+						else
+							throw new Error('Не вистачає місць...')
+						console.log(this.numberOfPassengers)
+					}
+					disembarkingPassengers(numOfPassengersToExit) {
+						if (this.numberOfPassengers >= numOfPassengersToExit) {
+							this.numberOfPassengers -= numOfPassengersToExit
+						}
+						else
+							throw new Error('Немає такої кількості пасажирів для висадки...')
+						console.log(this.numberOfPassengers)
+					}
+					toString() {
+						return `Кількість пасажирських місць в авто -
+						${this.numberOfSeats}; Кількість наявних пасажирів - ${this.numberOfPassengers}
+					`
+					}
+				}
+
+				let auto_1 = new Auto('BMW', 50, 10, 20, 5)
+				auto_1.refuel(20)
+				auto_1.addingPassengers(2)
+				auto_1.disembarkingPassengers(5)
+				document.write(auto_1)
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 5</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 4</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				// Розробити клас Baner
+				//=========== опис властивостей-полів ========================
+				// Масив об’єктів(графічних зображень та посилань на сайти)
+				// ==============методи=======================================
+				// Метод випадкового вибору об’єкта(графічного зображення та посилання)
+				// Метод виведення випадкового банера
+
+
+				class Baner {
+					constructor(arrayObj) {
+						this.arrayObj = arrayObj
+					}
+					getRandomNum(minValue, maxValue) {
+						return minValue + Math.floor(Math.random() * (maxValue - minValue + 1))
+					}
+					getRandonIndex() {
+						let randomIndex = this.getRandomNum(0, this.arrayObj.length - 1)
+						return this.arrayObj[randomIndex]
+					}
+					printImage() {
+						document.write(`<a href = ${this.getRandonIndex().link}>`)
+						document.write(`<img src = ${this.getRandonIndex().image}>`)
+						document.write(`</a>`)
+
+					}
+				}
+
+				let images = [
+					{
+						image: 'https://img.hotels24.ua/photos/ria/new_images/1123/112322/11232296/11232296m.jpg',
+						link: 'https://hotels24.ua/'
+					},
+					{
+						image: 'https://dorogovkaz.com/images/karpaty/karpaty_s_basseinom_photo.jpg',
+						link: 'https://ua.dorogovkaz.com/'
+					},
+					{
+						image: 'https://doba.ua/karpaty/img/karpaty_summer.jpg',
+						link: 'https://doba.ua/karpaty/'
+					},
+					{
+						image: 'https://misto.travel/Image/source/news/2018/06/turkey-egeyskoe-more-2.jpg',
+						link: 'https://misto.travel/'
+					},
+					{
+						image: 'https://blog.metro.ua/wp-content/uploads/2017/09/shutterstock_627188573-1024x683.jpg',
+						link: 'https://blog.metro.ua/'
+					}
+				]
+				let result = new Baner(images)
+				result.printImage()
+
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>
