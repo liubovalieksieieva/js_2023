@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 1</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 0</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				// Задача 0. Дано два об’єкта.Обидва містять масив цілих чисел.При цьому у одному з них є функція знаходження суми, а у іншому –
+				// функція для знаходження добутку тих, які знаходяться між заданими мінімальним і максимальниm значенням.
+				// Використати обидва методи стосовно обидвох об’єктів(використати call, apply)
+
+				let object_1 = {
+					numbers: [2, 12, 4, 6, 5, 10],
+					getSum: function () {
+						return this.numbers.reduce((prevSum, number) => prevSum + number)
+					},
+				}
+
+				let object_2 = {
+					numbers: [20, 10, 30, 50],
+					getProduct: function (minValue, maxValue) {
+						let result = 1
+						for (let i = 0; i < this.numbers.length; i++) {
+							if (this.numbers[i] > minValue && this.numbers[i] < maxValue)
+								result *= this.numbers[i]
+						}
+						return result
+					},
+				}
+				// =================== call ==========================================
+				let s_1 = object_1.getSum()
+				let s_2 = object_1.getSum.call(object_2)
+				document.write(`S_1 = ${s_1} <br> S_2 = ${s_2} <br>`)
+
+				let product_1 = object_2.getProduct.call(object_1, 2, 10)
+				let product_2 = object_2.getProduct()
+				document.write(`Product_1 = ${product_1} <br> Product_2 = ${product_2}`)
+				// ================== apply ==========================================
+				// let sum = object_1.getSum.apply(object_2)
+				// document.write(sum)
+				// document.write(`<br>`)
+				// let product = object_2.getProduct.apply(object_1, [2, 10])
+				// document.write(product)
+
+
+
+
+
+
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>
