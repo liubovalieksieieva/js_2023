@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Task 5</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 5</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<form action="#">
+				<div>
+					<label>Кількість колонок
+						<input class="columns" type="number" value="">
+					</label>
+					<label>Кількість рядків
+						<input class="rows" type="number" value="">
+					</label>
+				</div>
+				<div>
+					<button>Створити</button>
+				</div>
+			</form>
+			<script>
+				// Задача 5. Користувач задає кількість рядків і стовпців.Відобразити таблицю, у клітинках якої
+				// знаходяться числа 1, 2, 3, …
+				function createTable() {
+					const countRows = parseInt(document.querySelector('.rows').value)
+					const countColumns = parseInt(document.querySelector('.columns').value)
+					let counter = 0
+					const table = document.createElement('table')
+					for (let i = 0; i < countRows; i++) {
+						const rows = document.createElement('tr')
+						table.append(rows)
+
+						for (let j = 0; j < countColumns; j++) {
+							const columns = document.createElement('td')
+							rows.append(columns)
+							counter++
+							columns.innerText = counter
+						}
+					}
+					document.querySelector('.some-button').after(table)
+				}
+
+				window.onload = function () {
+					document.querySelector('button').onclick = createTable
+				}
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

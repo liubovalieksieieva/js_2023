@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 2</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 2</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<div>
+				<label>Сума в гривнях
+					<input type="number" id="grn" value="">
+				</label>
+			</div>
+			<div>
+				<button>Конвертувати</button>
+			</div>
+			<div>
+				<label>Сума в доларах
+					<input type="number" id="dollar" value="">
+				</label>
+				<div>
+					<label>Сума в євро
+						<input type="number" id="euro" value="">
+					</label>
+				</div>
+			</div>
+			<script>
+				// Задача 2. Зробити конвертер валют(курси валют – константи у скрипті)
+				function convert() {
+					const rateDollar = 37.65
+					const rateEuro = 40.56
+					const grn = parseFloat(document.getElementById('grn').value)
+					const convertEuro = grn / rateEuro
+					const convertDollar = grn / rateDollar
+					document.getElementById('euro').value = convertEuro.toFixed(2)
+					document.getElementById('dollar').value = convertDollar.toFixed(2)
+				}
+				window.onload = function () {
+					document.querySelector('button').onclick = convert
+				}
+
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

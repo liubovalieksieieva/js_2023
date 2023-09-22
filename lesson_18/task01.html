@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 1</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 1</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<div>
+				<label>First number
+					<input id="firstNum" type="number" value="">
+				</label>
+				<label>Second number
+					<input id="secondNum" type="number" value="">
+				</label>
+			</div>
+			<div>
+				<button value="+">Додати</button>
+				<button value="-">Відняти</button>
+				<button value="*">Помножити</button>
+				<button value="/">Поділити</button>
+			</div>
+			<div>Результат <span id="result"></span></div>
+			<script>
+				// Задача 1. Розробити калькулятор
+				function calculator(operation) {
+					const firstNum = parseFloat(document.getElementById('firstNum').value)
+					const secondNum = parseFloat(document.getElementById('secondNum').value)
+					const value = operation
+					let result
+					switch (value) {
+						case '+': result = firstNum + secondNum
+							break;
+						case '-': result = firstNum - secondNum
+							break;
+						case '*': result = firstNum * secondNum
+							break;
+						case '/': result = firstNum / secondNum
+							break;
+						default: throw new Error('Помилка обчислення');
+							break;
+					}
+					document.getElementById('result').innerText = result
+				}
+				window.onload = function () {
+					const button = document.querySelectorAll('button')
+					button.forEach(button =>
+						button.onclick = function () {
+							calculator(button.value)
+						});
+				}
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

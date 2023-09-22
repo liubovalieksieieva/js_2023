@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 0</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 0</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<h2>Напої</h2>
+			<div>
+				<label> Чай
+					<input type="checkbox" value="10">
+				</label>
+				<label>Кава
+					<input type="checkbox" value="35">
+				</label>
+				<label>Сік
+					<input type="checkbox" value="20">
+				</label>
+				<label>Лимонад
+					<input type="checkbox" value="25">
+				</label>
+			</div>
+			<h2>Перші страви</h2>
+			<div>
+				<label>Суп
+					<input type="checkbox" value="45">
+				</label>
+				<label>Борщ
+					<input type="checkbox" value="37">
+				</label>
+			</div>
+			<h2>Другі страви</h2>
+			<div>
+				<label>Паста
+					<input type="checkbox" value="60.236">
+				</label>
+				<label>Картопля з котлетою
+					<input type="checkbox" value="55.2365">
+				</label>
+				<label>Гречка з грибами
+					<input type="checkbox" value="49">
+				</label>
+			</div>
+			<h2>Десерт</h2>
+			<div>
+				<label>Мафін
+					<input type="checkbox" value="80">
+				</label>
+
+			</div>
+			<div>
+				<button>Розрахувати вартість обіду</button>
+			</div>
+			<div> Total sum:
+				<span id="result"></span>
+			</div>
+			<script>
+				//   Задача. Знайти загальну суму обіду
+				//  ---- напої ---
+				// • чай -10 грн.
+				// • сік – 20 грн
+				// • кава – 35 грн
+				// -----перше ---
+				// • суп – 45 грн
+				// • борщ - 37 грн.
+				// ---- друге –
+				// • паста – 60 грн.
+				// • картопля з катлетою – 55 грн.
+				// • гречка з грибами – 49 грн. if (inp.checked)
+				function getTotalPrice() {
+					const inpList = document.querySelectorAll('input')
+					let sum = 0
+					for (const inp of inpList) {
+						if (inp.checked) {
+							sum += parseFloat(inp.value)
+						}
+						document.getElementById('result').innerText = sum.toFixed(2)
+					}
+				}
+				window.onload = function () {
+					document.querySelector('button').onclick = getTotalPrice
+				}
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

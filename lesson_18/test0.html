@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">test</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+
+		</main>
+		<footer></footer>
+	</div>
+	<label for="course"> Course
+		<input type="number" , id="course" ,value="37">
+	</label>
+	<label for="grn"> Grn
+		<input type="number" , id="grn" ,value="0">
+	</label>
+	<div>
+		<button>Convert</button>
+	</div>
+	<div>Кількість долларів <span id="result"></span></div>
+	<script>
+		function convert() {
+			const rate = parseFloat(document.getElementById('course').value)
+			const grn = parseFloat(document.getElementById('grn').value)
+			const dollar = grn / rate
+			document.getElementById('result').innerText = dollar.toFixed(2)
+		}
+		window.onload = function () {
+			document.querySelector('button').onclick = convert
+		}
+	</script>
+</body>
+
+</html>

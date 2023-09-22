@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">test</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<div>
+				<label>Тип вагону
+					<select id="cattidgeType">
+						<option selected value="200">плацкарт</option>
+						<option value="800">купе</option>
+						<option value="1500">люкс</option>
+					</select>
+				</label>
+			</div>
+			<div>
+				<label>Акційні пакети
+					<select id="acPackage">
+						<option selected value="50">сніданок</option>
+						<option value="0">кава</option>
+						<option value="0">чай</option>
+					</select>
+				</label>
+			</div>
+			<div>
+				<button class="button">Розрахувати вартість квитка</button>
+			</div>
+			<div>Total :
+				<span id="result1"></span>
+			</div>
+			<script>
+				//Задача. Знайти загальну вартість поїздки у поїзді:
+				// тип вагону :
+				// • плацкарт – 200грн.
+				// • купе – 800грн.
+				// акційні пакети (вибір тільки одного)
+				// • сніданок – акційна ціна 50 грн.
+				// • безкоштовний чай
+				// • безкоштовна кава
+				function getTotalPrice_1(params) {
+					const ticketPrice = parseFloat(document.getElementById('cattidgeType').value)
+					const acPackage = parseFloat(document.getElementById('acPackage').value)
+					const s = ticketPrice + acPackage
+					document.getElementById('result1').innerText = s.toFixed(2)
+				}
+				window.onload = function () {
+					document.querySelector('button').onclick = getTotalPrice_1
+				}
+
+			</script>
+			<script>
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

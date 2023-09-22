@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 3</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 3</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<div>
+				<label>Вкажіть Ваш рік народження
+					<input id="userYear" type="number" value="">
+				</label>
+			</div>
+			<div>
+				<button>Визначити вік</button>
+			</div>
+			<div>
+				<label> Ваш вік:
+					<input id="result" type="number" value="">
+				</label>
+			</div>
+			<script>
+				// Задача 3. Користувач задає рік народження.Визначити кількість років користувача.
+				function calculation() {
+					const currentYear = 2023
+					const userYear = parseInt(document.getElementById('userYear').value)
+					const calculation = currentYear - userYear
+					document.getElementById('result').value = calculation
+				}
+				window.onload = function () {
+					document.querySelector('button').onclick = calculation
+				}
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

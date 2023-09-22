@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Task 5</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 7</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<div>
+				<h2 class="travel">Сполучення Київ - Львів</h2>
+				<label> Виберіть тип транспорту
+					<select class="transport">
+						<option value="2500">Автомобіль</option>
+						<option value="1500">Автобус</option>
+						<option value="3500">Літак</option>
+					</select>
+				</label>
+				<div>
+					<h2>Харчування</h2>
+					<label>Сніданок
+						<input type="checkbox" value="200">
+					</label>
+					<label>Обід
+						<input type="checkbox" value="300">
+					</label>
+					<label>Вечеря
+						<input type="checkbox" value="300">
+					</label>
+				</div>
+				<div>
+					<h2>Оберіть гіда</h2>
+					<label>
+						<input class="guide" type="radio" value="500">Пан Андрій
+						<input class="guide" type="radio" value="500">Пан Евген
+						<input class="guide" type="radio" value="500">Пані Юлія
+					</label>
+				</div>
+			</div>
+			<div>
+				<h2 class="travel">Сполучення Львів - Ужгород</h2>
+				<label> Виберіть тип транспорту
+					<select class="transport">
+						<option value="2500">Автомобіль</option>
+						<option value="1500">Автобус</option>
+						<option value="3500">Літак</option>
+					</select>
+				</label>
+				<div>
+					<h2>Харчування</h2>
+					<label>Сніданок
+						<input type="checkbox" value="200">
+					</label>
+					<label>Обід
+						<input type="checkbox" value="300">
+					</label>
+					<label>Вечеря
+						<input type="checkbox" value="300">
+					</label>
+				</div>
+				<div>
+					<h2>Оберіть гіда</h2>
+					<label>
+						<input class="guide" type="radio" value="500">Пан Андрій
+						<input class="guide" type="radio" value="500">Пан Евген
+						<input class="guide" type="radio" value="500">Пані Юлія
+					</label>
+				</div>
+			</div>
+			<div>
+				<h2 class="travel">Сполучення Ужгород - Київ</h2>
+				<label> Виберіть тип транспорту
+					<select class="transport">
+						<option value="2500">Автомобіль</option>
+						<option value="1500">Автобус</option>
+						<option value="3500">Літак</option>
+					</select>
+				</label>
+				<div>
+					<h2>Харчування</h2>
+					<label>Сніданок
+						<input type="checkbox" value="200">
+					</label>
+					<label>Обід
+						<input type="checkbox" value="300">
+					</label>
+					<label>Вечеря
+						<input type="checkbox" value="300">
+					</label>
+				</div>
+				<div>
+					<h2>Оберіть гіда</h2>
+					<label>
+						<input class="guide" type="radio" value="500">Пан Андрій
+						<input class="guide" type="radio" value="500">Пан Евген
+						<input class="guide" type="radio" value="500">Пані Юлія
+					</label>
+				</div>
+				<div>
+					<button id="total">Розрахувати вартість квитка</button>
+				</div>
+				<div>Total
+					<span id="result"></span>
+				</div>
+			</div>
+			<script>
+				// Задача 7. Подорож складається з 3 етапів.На кожному етапі користувач може вибрати один з видів
+				// транспорту(авто, автобус, літак - випадаючий список), харчування(сніданок, обід, вечеря – checkbоx)
+				// та одного з 3 - х гідів(використати - radio buttons).Ціни визначте самі.Підрахувати загальну вартість.
+
+				function getTotalPrice() {
+					const transport = document.querySelectorAll('.transport')
+					let priceTrans = 0
+					for (const option of transport) {
+						priceTrans += parseFloat(option.value)
+					}
+					const inputList = document.querySelectorAll('input')
+					let priceFoods = 0
+					for (const inp of inputList) {
+						if (inp.checked) {
+							priceFoods += parseFloat(inp.value)
+						}
+					}
+					const guide = document.querySelectorAll('.guide')
+					let priceGuide = 0
+					for (const inp of guide) {
+						if (inp.checked) {
+							priceGuide += parseFloat(inp.value)
+						}
+					}
+					let totalPrice = priceTrans + priceFoods + priceGuide
+					document.getElementById('result').innerText = totalPrice + ' grn'
+				}
+
+				window.onload = function () {
+					document.getElementById('total').onclick = getTotalPrice
+				}
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

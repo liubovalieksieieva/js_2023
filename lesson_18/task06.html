@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 5</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 6</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<div>
+				<label>Кількість оцінок
+					<input class="count-scores" type="number" value="">
+				</label>
+			</div>
+			<div class="button-table">
+				<button>Get Table</button>
+			</div>
+
+			<script>
+				// Задача 6. Користувач задає кількість оцінок і натискає на кнопку «get table». В результаті формується
+				// таблиця з input, куди користувач вводить оцінки.Після цього натискає на кнопку “get sum” і знаходить
+				// середнє значення.
+				function getTable() {
+					const countScores = parseInt(document.querySelector('.count-scores').value)
+					const table = document.createElement('table')
+					for (let i = 0; i < countScores; i++) {
+						const label = document.createElement('label')
+						label.innerText = 'введіть оцінку'
+						const input = document.createElement('input')
+						input.setAttribute('value', '0')
+						input.setAttribute('type', 'number')
+						input.className = 'score'
+						label.append(input)
+						table.append(label)
+					}
+					const baseEl = document.querySelector('.button-table')
+					baseEl.after(table)
+					const button = document.createElement('button')
+					button.innerText = 'get sum'
+					button.className = 'get-sum'
+					const baseElButton = document.querySelector('table')
+					baseElButton.after(button)
+					button.onclick = getAverageScore
+				}
+
+
+
+				function getAverageScore() {
+					const scoresList = document.querySelectorAll('.score')
+					let sum = 0
+					for (const score of scoresList) {
+						sum += parseInt(score.value)
+					}
+					let averageSum = sum / scoresList.length
+					const result = document.createElement('div')
+					result.innerText = averageSum + ' - ваш середній бал'
+					const baseElResult = document.querySelector('.get-sum')
+					baseElResult.after(result)
+				}
+
+				document.querySelector('button').onclick = getTable
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>
