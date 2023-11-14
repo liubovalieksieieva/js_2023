@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task03</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task03</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<style>
+				.product {
+					border: 2px solid black;
+					margin: 20px;
+					width: 200px;
+					display: flex;
+					justify-content: space-between;
+				}
+			</style>
+
+			<script>
+
+				// Описати клас Product, що представляє товар онлайн магазину(з можливістю видалення).Потім описати клас корзина "Cart",
+				// у якому є список продуктів.При видаленні продукту повинна змінюватись загальна вартість у корзині.
+
+				class Product {
+					constructor({ title, price }) {
+						this.title = title
+						this.price = price
+					}
+					onDelete() {
+						const deleteEvent = new CustomEvent('deleteProduct',
+							{
+								detail: {
+									priceOfDeletedObject: this.price
+								}
+							}
+						)
+						this.element.dispatchEvent(deleteEvent)
+						this.element.remove()
+					}
+					render(containerSelector) {
+						const element = document.createElement('div')
+						element.className = 'product'
+
+						const spanTitle = document.createElement('span')
+						spanTitle.innerText = this.title
+						element.append(spanTitle)
+
+						const spanPrice = document.createElement('span')
+						spanPrice.innerText = this.price
+						element.append(spanPrice)
+
+						const btn = document.createElement('button')
+						btn.innerText = 'Delete'
+						btn.onclick = this.onDelete.bind(this)
+						element.append(btn)
+						this.element = element
+
+						if (containerSelector)
+							document.querySelector(containerSelector).append(element)
+						return element
+					}
+				}
+				class Cart {
+					constructor(productList) {
+						this.productList = productList
+					}
+					onProductDelete(event) {
+						const priceToDelete = event.detail.priceOfDeletedObject
+						this.totalPrice -= priceToDelete
+						this.priceSpan.innerText = this.totalPrice
+
+					}
+					render(containerSelector) {
+						const el = document.createElement('div')
+						el.className = 'cart'
+
+						for (const product of this.productList) {
+							const productObj = new Product(product)
+
+							el.append(productObj.render())
+
+							productObj.element.addEventListener('deleteProduct', this.onProductDelete.bind(this))
+						}
+						const totalDiv = document.createElement('div')
+						totalDiv.innerText = 'Total : '
+						const span = document.createElement('span')
+						this.totalPrice = this.productList.reduce((prevSum, prod) => prevSum + prod.price, 0)
+						span.innerText = this.totalPrice
+						this.priceSpan = span
+						totalDiv.append(span)
+						el.append(totalDiv)
+						if (containerSelector) {
+							document.querySelector(containerSelector).append(el)
+						}
+					}
+				}
+				const productList = [
+					{
+						title: 'Coffee',
+						price: 1250
+					},
+					{
+						title: 'Tea',
+						price: 560
+					},
+					{
+						title: 'Phone',
+						price: 15000
+					},
+					{
+						title: 'IPad',
+						price: 56000
+					},
+				]
+
+				window.onload = function () {
+					const result = new Cart(productList)
+					result.render('#list')
+				}
+
+
+
+			</script>
+			<div id="list">
+
+
+			</div>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task04</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task04</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<script>
+				// Підкидання кубика (6 граней) 
+
+				class Dice {
+					constructor(faceCount) {
+						this.faceCount = faceCount
+					}
+					getScore() {
+						return 1 + Math.floor(Math.random() * this.faceCount)
+					}
+				}
+				// Створення нового класу на основі попереднього, підкидання кубика тричі, і вирахування середнього балу
+				class SuperDice extends Dice {
+					constructor(faceCount, attemptCount) {
+						super(faceCount)
+						this.attemptCount = attemptCount
+					}
+					getScore() {
+						let sum = 0
+						for (let i = 0; i < this.attemptCount; i++) {
+							let result = super.getScore()
+							alert(result)
+							sum += result
+						}
+						return sum / this.attemptCount
+					}
+				}
+
+				let play = new SuperDice(6, 3)
+				console.log(play);
+				document.write(play.getScore().toFixed(2))
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

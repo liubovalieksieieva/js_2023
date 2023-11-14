@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task02</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task02</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<style>
+				table {
+					border: solid 2px black;
+					width: 200px;
+					height: 200px;
+				}
+
+				td {
+					border: solid 1px black;
+					background-color: gray;
+				}
+			</style>
+			<table>
+				<tr>
+					<td mine="1"></td>
+					<td mine="0"></td>
+					<td mine="0"></td>
+					<td mine="1"></td>
+					<td mine="0"></td>
+				</tr>
+				<tr>
+					<td mine="1"></td>
+					<td mine="0"></td>
+					<td mine="0"></td>
+					<td mine="1"></td>
+					<td mine="0"></td>
+				</tr>
+				<tr>
+					<td mine="1"></td>
+					<td mine="0"></td>
+					<td mine="1"></td>
+					<td mine="1"></td>
+					<td mine="0"></td>
+				</tr>
+				<tr>
+					<td mine="1"></td>
+					<td mine="0"></td>
+					<td mine="0"></td>
+					<td mine="1"></td>
+					<td mine="1"></td>
+				</tr>
+				<tr>
+					<td mine="0"></td>
+					<td mine="1"></td>
+					<td mine="0"></td>
+					<td mine="1"></td>
+					<td mine="0"></td>
+				</tr>
+			</table>
+			<script>
+				// Створити таблицю.При натисканні на клітинку, якщо є міна, то вміст змінюється на червоний колір, інакше - синій.
+
+				function onTdClick(event) {
+					if (event.target.tagName === 'TD') {
+						const td = event.target
+						const mineValue = td.getAttribute('mine')
+						if (mineValue === '1')
+							td.style.backgroundColor = 'red'
+						else
+							td.style.backgroundColor = 'blue'
+					}
+				}
+				document.querySelector('table').onclick = onTdClick
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>
