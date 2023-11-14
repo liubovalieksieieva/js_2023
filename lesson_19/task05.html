@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task05</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task05</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<style>
+				.taskItem {
+					display: flex;
+					justify-content: space-between;
+				}
+			</style>
+			<div>
+				<h2>Додати задачу</h2>
+				<div>
+					<label>Назва задачі
+						<input type="text" id="taskTitle">
+					</label>
+				</div>
+				<div>
+					<label>Пріорітетність задачі
+						<input type="number" id="taskPriority">
+					</label>
+				</div>
+				<div>
+					<button id="addTask">Додати</button>
+				</div>
+			</div>
+			<div id="taskList"></div>
+			<script>
+				// Реалізувати додавання та вилучення задач.
+				function deletTask() {
+					const remove = this
+					remove.closest('.taskItem').remove()
+				}
+				function onAddTask() {
+					const taskTitle = document.querySelector('#taskTitle').value
+					const taskPriority = document.querySelector('#taskPriority').value
+
+					const container = document.createElement('div')
+					container.className = 'taskItem'
+					const title = document.createElement('div')
+					title.innerText = taskTitle
+					container.append(title)
+					const priorety = document.createElement('div')
+					priorety.innerText = taskPriority
+					container.append(priorety)
+
+					const button = document.createElement('button')
+					button.innerText = 'Видалити'
+					button.onclick = deletTask
+					container.append(button)
+					document.querySelector('#taskList').append(container)
+
+				}
+				document.querySelector('#addTask').onclick = onAddTask
+			</script>
+
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

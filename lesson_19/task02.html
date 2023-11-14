@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task02</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task02</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<div class="cards">
+
+			</div>
+			<script>
+				const linksSet = [
+					{
+						title: 'Ukrnet',
+						imgSrc: 'images/ukrnet.jpg',
+						link: 'https://www.ukr.net/'
+					},
+					{
+						title: 'Books',
+						imgSrc: 'images/logoBooks.jpeg',
+						link: 'https://www.warriors.com.ua/'
+					},
+					{
+						title: 'Travel',
+						imgSrc: 'images/logoTravel.jpg',
+						link: 'https://www.coraltravel.ua/'
+					}
+				]
+
+				class CardLink {
+
+					constructor({ title, imgSrc, link }) {
+						this.title = title
+						this.imgSrc = imgSrc
+						this.link = link
+					}
+					render(containerSelector) {
+						const a = document.createElement('a')
+						a.setAttribute('href', this.link)
+						a.className = 'card-container'
+
+						const imgContainer = document.createElement('div')
+						imgContainer.className = 'img-container'
+						a.append(imgContainer)
+
+						const img = document.createElement('img')
+						img.setAttribute('src', this.imgSrc)
+						img.className = 'image-card'
+						imgContainer.append(img)
+
+						const title = document.createElement('div')
+						title.innerText = this.title
+						title.className = 'card-title'
+						a.append(title)
+
+						if (containerSelector) {
+							document.querySelector(containerSelector).append(a)
+							return a
+						}
+					}
+				}
+
+				window.onload = function () {
+					for (const set of linksSet) {
+						const result = new CardLink(set)
+						result.render('.cards')
+					}
+				}
+
+
+			</script>
+
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

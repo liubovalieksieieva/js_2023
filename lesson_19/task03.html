@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task03</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task03</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<div class="test"></div>
+			<script>
+				// Задача.Crazy button.При наведенні кнопка повинна змінювати свій колір і позицію випадковим
+				// чином зміщаючись у деякому напрямку.
+
+				class CrazyButton {
+					constructor(btnTitle, maxStep) {
+						this.btnTitle = btnTitle
+						this.maxStep = maxStep
+					}
+					getRandomStep() {
+						return -this.maxStep + Math.floor(Math.random() * 2 * this.maxStep)
+					}
+
+					jump() {
+						const stepLeft = this.getRandomStep()
+						const stepTop = this.getRandomStep()
+						this.button.style.left = parseInt(this.button.style.left) + stepLeft + 'px'
+						this.button.style.top = parseInt(this.button.style.top) + stepTop + 'px'
+					}
+					render(containerSelector) {
+						this.button = document.createElement('button')
+						this.button.innerText = this.btnTitle
+						this.button.onmousemove = this.jump.bind(this)
+						this.button.style.position = 'absolute'
+						this.button.style.left = '100px'
+						this.button.style.top = '150px'
+						if (containerSelector) {
+							document.querySelector(containerSelector).append(this.button)
+						}
+					}
+				}
+				window.onload = function () {
+					const result = new CrazyButton('Test', 50)
+					result.render('.test')
+				}
+
+			</script>
+
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

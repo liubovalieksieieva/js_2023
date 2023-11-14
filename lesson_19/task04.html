@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task04</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task04</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<style>
+				td {
+					width: 20px;
+					height: 20px;
+					background-color: gray;
+					border: solid 2px rgb(32, 0, 128);
+				}
+			</style>
+			<table>
+				<tr>
+					<td mine="1"></td>
+					<td mine="0"></td>
+					<td mine="0"></td>
+					<td mine="1"></td>
+					<td mine="0"></td>
+					<td mine="0"></td>
+					<td mine="0"></td>
+					<td mine="0"></td>
+					<td mine="1"></td>
+					<td mine="1"></td>
+				</tr>
+			</table>
+			<script>
+				// Задача.Однорядковий сапер.Однорядкова таблиця, до клітинок якої додано інформацію про наявність 
+				// міни(використати атрибути).Спочатку клітинки сірі.При натисненні на клітинку аналізується чи є там міна
+				// і тоді колір стає червоним, якщо немає – зеленим.Додати можливість відкриття усіх сусідніх незамінованих
+				// клітинок при відкритті незамінованої клітинки.
+
+				function cellClick() {
+					const thisTd = this
+					const hasMine = thisTd.getAttribute('mine')
+					if (hasMine === '1')
+						thisTd.style.background = 'red'
+					else
+						thisTd.style.background = 'green'
+					let td = thisTd
+					while (td.previousElementSibling) {
+						td = td.previousElementSibling
+						if (td.getAttribute('mine') === '1') break
+						td.style.background = 'green'
+					}
+					// td = thisTd
+					while (td.nextElementSibling) {
+						td = td.nextElementSibling
+						if (td.getAttribute('mine') === '1') break
+						td.style.background = 'green'
+					}
+				}
+				const listTd = document.querySelectorAll('td')
+				for (const td of listTd) {
+					td.onclick = cellClick
+				}
+
+			</script>
+
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>
