@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 3</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 3</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+
+			<script>
+				// Задача 1. Зберігати ім’я користувача при заході на сайт та кількість відвідувань.
+
+				window.onload = function () {
+					let userName = localStorage.getItem('userName')
+					if (!userName) {
+						userName = prompt('What is your name?')
+						localStorage.setItem('userName', userName)
+					}
+					let visitedNum = parseInt(localStorage.getItem('visitedNum') ?? 0) + 1
+					localStorage.setItem('visitedNum', visitedNum)
+
+					document.write(`${userName}, visited to site : ${visitedNum}`)
+				}
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

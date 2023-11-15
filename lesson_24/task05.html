@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 3</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 5</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+
+			<script>
+				// let student = {
+				// 	name: 'Ivan',
+				// 	scores: [5, 8, 11, 9, 7, 1],
+				// 	[Symbol.toPrimitive](hint) {
+				// 		let result
+				// 		switch (hint) {
+				// 			case 'string':
+				// 				result = this.name
+				// 				break;
+				// 			case 'number':
+				// 				result = Math.min(...this.scores)
+				// 			default:
+				// 				break;
+				// 		}
+				// 		return result
+				// 	}
+				// }
+				// document.write(+student) //+ попереду дає приведення до number
+
+				// let range = {
+				// 	from: 1,
+				// 	to: 5,
+
+				// 	[Symbol.iterator]() {
+				// 		this.current = this.from
+				// 		return this
+				// 	},
+				// 	next() {
+				// 		if (this.current <= this.to)
+				// 			return {
+				// 				done: false, value: this.current++
+				// 			}
+				// 		else { done: true }
+				// 	}
+				// }
+				// for (const el of range) {
+				// 	console.log(el)
+				// }
+				//==============================================================
+				// Дано клас Student (піб, масив оцінок). Реалізувати ітератор для перебору оцінок
+
+				class Student {
+					constructor(name, scores) {
+						this.name = name
+						this.scores = scores
+					}
+					[Symbol.iterator]() {
+						this.currentIndex = 0
+						return this
+					}
+					next() {
+						if (this.currentIndex <= this.scores.length)
+							return { done: false, value: this.scores[this.currentIndex++] }
+						else
+							return { done: true }
+					}
+				}
+
+				const student1 = new Student('Ivan', [9, 8, 9, 10, 12, 11])
+				for (const score of student1) {
+					console.log(score);
+				}
+
+
+
+
+
+			</script>
+			<div id="todo"></div>
+
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Task 1</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 1</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+			<div class="img"></div>
+
+			<script>
+				//Задача. Підрахувати кількість входжень кожного із значень
+
+				// let arr = [12, 'hello', '12', 45, true, 'false', 'true', '12']
+				// let map = new Map()
+				// for (const el of arr) {
+				// 	let count = map.get(el) ?? 0
+				// 	map.set(el, count + 1)
+				// }
+				// // console.log(map);
+				// map.forEach((value, key) => {
+				// 	document.write(`${key} : ${value} <br>`)
+				// })
+				// =========================================================================
+
+				//Приклад. Дано список з віком учнів. Підрахувати скільки разів кожне значення зустрічається у списку і максимальне.
+				let ages = [12, 13, 15, 12, 15, 12, 8, 15]
+				let mapAges = new Map()
+				for (const age of ages) {
+					let count = (mapAges.get(age) ?? 0) + 1
+					mapAges.set(age, count)
+				}
+				console.log(mapAges);
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>
