@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 1</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<h1 class="header__title title">task 1</h1>
+			</div>
+		</header>
+		<main class="main__task">
+			<div class="some-button">
+				<a target="_blank" href="index.html" class="articles__button button">На головну</a>
+			</div>
+
+			<script>
+				// Задача.Створити клас TBankomat, який моделює роботу банкомата.Клас повинен містити поля для зберігання кількості купюр
+				// кожного із номіналів від 5 до 200 гривень.Реалізувати методи знаходження максимальної та мінімальної сум, які може видати банкомат,
+				// та метод зняття деякої суми.
+				// ----властивості
+				// notesList - об"єкт з даними про купюри
+				// ----методи
+				// getMaxMoneyValue - знаходження максимальної
+				// getMinMoneyValue - знаходження мінімальної
+				// withdrawMoney - метод зняття деякої суми.
+
+				class TBankomat {
+					constructor(notesList) {
+						this.notesList = { ...notesList }
+					}
+					getMaxMoneyValue() {
+						let sum = 0
+						for (const note in this.notesList) {
+							sum += parseInt(note) * this.notesList[note]
+						}
+						return sum
+					}
+					getMinMoneyValue() {
+						let minValue = +Infinity
+						// note - номінал банкноти
+						// this.notesList[note] - кількість куп'юр вказаної банкноти
+						for (const note in this.notesList) {
+							const noteValue = parseInt(note)
+							if (this.notesList[note] > 0 && noteValue < minValue)
+								minValue = noteValue
+						}
+						if (minValue === +Infinity)
+							// minValue = 0
+							throw new Error(`Sorry, is not money`)
+						return minValue
+					}
+					getNotesForMoneyValue(userMoneyValue) {
+						//зробити, щоб повертався об'єк із потрібними купюрами для видачі користувачу
+						// {
+						// 	500:2,
+						// 	100:1
+						// }
+						const notesCountObject = {}
+						const sortedList = Object.keys(this.notesList).sort((a, b) => b - a) //мінус перетворить стрінгу у число
+						// const sortedList = Object.keys(this.notesList).map(note => parseInt(note)).sort((a, b) => b - a)
+						for (const note of sortedList) {
+							if (userMoneyValue === 0) break
+							const noteValue = parseInt(note)
+							if (this.notesList[note] > 0 && userMoneyValue >= noteValue) {
+								//ділимо суму яку потрібно видати на номінал купюр і беремо цілу частину, Math.min застосовуємо щоб брало мінім. кількість купюр серед банкнот, бо наприклад у нас є лише одна 500, а потрібно видати 2
+								const notesCount = Math.min(Math.floor(userMoneyValue / noteValue), this.notesList[note])//[1100/500 = 2, бо візьме цілу частину]
+								userMoneyValue -= notesCount * note //наприклад видати потрібно 1100 (1100-=2*500)
+								notesCountObject[note] = notesCount // notesCountObject[500] = 2
+							}
+						}
+						if (userMoneyValue === 0) return notesCountObject
+						else null
+					}
+					withdrawMoney(userMoneyValue) {
+						const notesObject = this.getNotesForMoneyValue(userMoneyValue)
+						if (notesObject !== null) {
+							for (const note in notesObject) {
+								this.notesList[note] -= notesObject[note] //200-2, від кількості купюр віднімаємо потрібну кількість для видачі
+							}
+							console.log(notesObject)
+							return true
+						}
+						else
+							return false
+					}
+				}
+				const notesList = {
+					500: 1,
+					200: 141,
+					100: 362,
+					50: 522,
+					20: 10,
+					10: 0,
+					5: 0,
+				}
+				const result = new TBankomat(notesList)
+				result.withdrawMoney(2270)
+
+
+			</script>
+		</main>
+		<footer></footer>
+	</div>
+</body>
+
+</html>
